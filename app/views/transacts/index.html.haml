@@ -1,4 +1,12 @@
-= form_with model: @purchased, local: true do |f|
-  = f.submit '購入する', class: 'Per'
+.PurchaseFrom
+  %img{ src: "http://furima.tokyo/assets/logo-d3d78326971d78b06e3d6f0ba666d025a8ad681286b4d9e00e7dbe8673bcfd23.svg", class: "PurchaseIcon" }
+  .PurchaseBox
+    購入内容の確認
+    .PurchaseItem
+      .PurchaseItem__price
+        %h5 支払い金額
+        %p ￥4,200
 
-end
+= form_with model: @purchased, local: true do |f|
+  = f.submit '購入する', class: 'Purchase__submit'
+
