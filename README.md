@@ -28,7 +28,7 @@ Things you may want to cover:
 |------|----|-------|
 |family_name|string|null: false|
 |first_name|string|null: false|
-|familly_name_kana|string|null: false|
+|family_name_kana|string|null: false|
 |first_name_kana|string|null: false|
 |nickname|string|null: false|
 |email|string|null:false, unique: true|
@@ -44,7 +44,7 @@ Things you may want to cover:
 - has_many :comments
 - has_many :favorites
 - has_one :card
-
+-has_many :purchased
 
 ## favoritesテーブル
 |Column|Type|Options|
@@ -161,3 +161,4 @@ Things you may want to cover:
 
 ### Association
 -belongs_to :user
+-belongs_to :item
