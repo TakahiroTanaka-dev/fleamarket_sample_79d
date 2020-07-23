@@ -17,13 +17,13 @@
 }
 
 .product-footer{
-  height: 125px;
-  padding-top: 40px;
+  height: 200px;
   background-color: rgb(245, 245, 245);
-  &__center{
-    width: 450px;
-    height: 180px;
-    margin: 0 auto;
-    text-align: center;
+  &__upper{
+    height: 80px;
+  }
+  &__bottom{
+    height: 120px;
   }
 }
+
