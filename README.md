@@ -150,4 +150,6 @@ Things you may want to cover:
 |------|----|-------|
 |name|string|unique :true|
 
+### Association
+-has_many :items
 
