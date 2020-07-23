@@ -28,15 +28,15 @@ Things you may want to cover:
 |------|----|-------|
 |family_name|string|null: false|
 |first_name|string|null: false|
-|familly_name_kana|
-|first_name_kana|
-|nickname|
-|email|
-|password|
-|birth_year|
-|birth_month|
-|birth_date|
-|icon|
+|familly_name_kana|string|null: false|
+|first_name_kana|string|null: false|
+|nickname|string|null: false|
+|email|string|null:false, unique: true|
+|password|string|null: false|
+|birth_year|string|null: false|
+|birth_month|string|null: false|
+|birth_date|string|null: false|
+|icon|string||
 
 ### Association
 - has_many :items
