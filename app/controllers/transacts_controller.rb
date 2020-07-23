@@ -12,5 +12,4 @@ class TransactsController < ApplicationController
 
   end
 
-  def 
 end
