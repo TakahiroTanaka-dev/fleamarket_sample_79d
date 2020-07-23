@@ -20,4 +20,10 @@
   height: 125px;
   padding-top: 40px;
   background-color: rgb(245, 245, 245);
+  &__center{
+    width: 450px;
+    height: 180px;
+    margin: 0 auto;
+    text-align: center;
+  }
 }
