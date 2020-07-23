@@ -8,7 +8,7 @@ a {
 }
 
 .Product{
-  height: 100vh;
+  height: 220vh;
   width: 100vw;
   background-color: #EEEEEE;
 }
@@ -31,14 +31,33 @@ a {
 // フォーム部分
 .product-main{
   width: 700px;
-  height: calc(100vh - 278px);
+  height: calc(200vh - 278px);
   margin: 0 auto;
-  background-color: gray;
+  background-color: white;
   display: block;
   &__contents{
     background-color:white;
     width: 100%;
     margin: 0 auto;
+    &__message{
+      font-size: 22px;
+      display: block;
+      padding: 32px 16px;
+      text-align: center;
+      font-weight: bold;
+    }
+  }
+  .img-form{
+    padding: 40px;
+    border-bottom: 1px solid #EEEEEE;
+    &__text{
+      font-size:16px;
+      color:#333;
+    }
+    &__comment{
+      font-size: 12px;
+      margin:8px 0 0;
+    }
   }
 }
 
