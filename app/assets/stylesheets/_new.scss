@@ -7,6 +7,12 @@ a {
   text-decoration: none;
 }
 
+.Product{
+  height: 100vh;
+  width: 100vw;
+  background-color: #EEEEEE;
+}
+
 // ヘッダー部分
 .product-header{
   height: 128px;
@@ -14,7 +20,7 @@ a {
   align-items: center;
   justify-content: center;
   font-size: 20px;
-  background-color: rgb(255, 255, 255);
+  background-color: #EEEEEE;
   &__logo{
     height: 50px;
     width: 150px;
@@ -24,13 +30,22 @@ a {
 
 // フォーム部分
 .product-main{
+  width: 700px;
   height: calc(100vh - 278px);
+  margin: 0 auto;
+  background-color: gray;
+  display: block;
+  &__contents{
+    background-color:white;
+    width: 100%;
+    margin: 0 auto;
+  }
 }
 
 // footer部分
 .product-footer{
   height: 150px;
-  background-color: rgb(245, 245, 245);
+  background-color: #EEEEEE;
   &__upper{
     height: 80px;
     text-align: center;
