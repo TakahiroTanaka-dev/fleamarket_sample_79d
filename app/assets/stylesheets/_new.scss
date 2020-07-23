@@ -21,9 +21,20 @@
   background-color: rgb(245, 245, 245);
   &__upper{
     height: 80px;
+    text-align: center;
+    
   }
   &__bottom{
     height: 120px;
+  }
+
+  .menu{
+    display: flex;
+    justify-content: center;
+    &__list{
+      padding-top: 10px;
+      margin-right: 25px;
+    }
   }
 }
 
