@@ -25,9 +25,15 @@
     
   }
   &__bottom{
-    height: 120px;
+    text-align: center;
+    margin:0 auto;
+    &__monochrome{
+      height: 50px;
+      width: 150px;
+    }
   }
 
+  // プライバシーポリシーとかの部分
   .menu{
     display: flex;
     justify-content: center;
