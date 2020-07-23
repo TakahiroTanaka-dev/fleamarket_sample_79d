@@ -152,13 +152,3 @@ Things you may want to cover:
 
 ### Association
 -has_many :items
-
-## purchasedテーブル
-|Column|Type|Options|
-|------|----|-------|
-|item_id|references|null: false, foreign_key: true|
-|user_id|references|null: false, foreign_key: true|
-
-### Association
--belongs_to :user
--belongs_to :item
