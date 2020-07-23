@@ -39,26 +39,27 @@ a {
     background-color:white;
     width: 100%;
     margin: 0 auto;
-    &__message{
-      font-size: 22px;
-      display: block;
-      padding: 32px 16px;
-      text-align: center;
-      font-weight: bold;
+    &__imagesection{
+      height: 300px;
+      font-size: 14px;
+      padding: 40px;
+      &__items{
+        display: flex;
+      }
+      &__imagecount{
+        margin-top: 16px;
+      }
     }
   }
-  .img-form{
-    padding: 40px;
-    border-bottom: 1px solid #EEEEEE;
-    &__text{
-      font-size:16px;
-      color:#333;
-    }
-    &__comment{
-      font-size: 12px;
-      margin:8px 0 0;
-    }
-  }
+}
+
+// 「必須」部分。Pタグ部分
+.caution{
+
+}
+
+.description{
+  margin-right: 10px;
 }
 
 // footer部分

@@ -3,15 +3,16 @@
     = link_to image_tag("logo.png", alt: "", class: "product-header__logo"), "#"
   .product-main
     .product-main__contents
-      %h3.product-main__contents__message
-        商品情報の入力
-        .img-form
-          .img__form__text
-            出品画像
-          %span.form--caution
+      .product-main__contents__imagesection
+        .product-main__contents__imagesection__items
+          %p.description
+            商品画像
+          %span.caution
             必須
-          .img__form__comment
-            最大10枚までアップロードできます
+        .product-main__contents__imagesection__imagecount
+          %p.description
+            10枚までアップロード可能です
+
   .product-footer
     .product-footer__upper
       %ul.menu
