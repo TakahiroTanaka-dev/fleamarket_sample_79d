@@ -34,13 +34,15 @@
         .product-main__contents__itemsection__textareacount
           0/1000
       .product-main__contents__detailsection
+        %p.title 商品の詳細
         .product-main__contents__detailsection__items
           %p.description
             カテゴリー
           %span.caution
             必須
-        .product-main__contents__detailsection__input
+        .product-main__contents__detailsection__select
           %select{name: "categoryId"}
+            %option{value: "0"} 選択してください
         .product-main__contents__detailsection__items
           %p.description
             ブランド
@@ -53,8 +55,9 @@
             商品の状態
           %span.caution
             必須
-        .product-main__contents__detailsection__input
-          %input{type: "text", name: "name", placeholder: "選択してください", autocomplete: "off"}
+        .product-main__contents__detailsection__select
+          %select{name: "categoryId"}
+            %option{value: "0"} 選択してください
 
 
         
