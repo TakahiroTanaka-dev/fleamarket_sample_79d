@@ -59,7 +59,7 @@ Things you may want to cover:
 ## addressesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|references|null: false|
+|user_id|references|null: false, foreign_key: true|
 |postal_code|string|null: false|
 |prefecture_id|integer|null: false|
 |city|string|null: false|
@@ -86,10 +86,10 @@ Things you may want to cover:
 |------|----|-------|
 |name|enum|null: false|
 |introduction|enum|null: false|
-|image_id|references|null: false|
+|image_id|references|null: false, foreign_key: true|
 |condition|enum|null: false|
 |price|integer|null: false|
-|category_id|references|null: false|
+|category_id|references|null: false, foreign_key: true|
 |shipping_cost|boolean|null: false|
 |prefecture_id|integer|null: false|
 |shipping_day|string|null: false|
