@@ -75,7 +75,7 @@ Things you may want to cover:
 |------|----|-------|
 |provider|string|null: false|
 |uid|string|null: false|
-|user_id|references|foreign_key: true|
+|user_id|references|null: false,foreign_key: true|
 
 ### Association
 - belongs_to :user
@@ -84,9 +84,9 @@ Things you may want to cover:
 ## itemsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|enum|null: false|
-|introduction|enum|null: false|
-|condition|enum|null: false|
+|name|string|null: false|
+|introduction|string|null: false|
+|condition|references|null: false, foreign_key: true|
 |price|integer|null: false|
 |category_id|references|null: false, foreign_key: true|
 |shipping_cost|boolean|null: false|
