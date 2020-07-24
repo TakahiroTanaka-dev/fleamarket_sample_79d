@@ -34,7 +34,8 @@
         .product-main__contents__itemsection__textareacount
           0/1000
       .product-main__contents__detailsection
-        %p.title 商品の詳細
+        .product-main__contents__detailsection__details
+          %p.title 商品の詳細
         .product-main__contents__detailsection__items
           %p.description
             カテゴリー
@@ -58,6 +59,35 @@
         .product-main__contents__detailsection__select
           %select{name: "categoryId"}
             %option{value: "0"} 選択してください
+      .product-main__contents__shippingsection
+        .product-main__contents__shippingsection__details
+          %p.title 配送について
+          %a.fas.fa-question-circle
+
+        .product-main__contents__shippingsection__items
+          %p.description
+            配送料の負担
+          %span.caution
+            必須
+        .product-main__contents__shippingsection__select
+          %select{name: "categoryId"}
+            %option{value: "0"} 選択してください
+        .product-main__contents__shippingsection__items
+          %p.description
+            発送元の地域
+          %span.caution
+            必須
+        .product-main__contents__shippingsection__input
+          %select{name: "categoryId"}
+            %option{value: "0"} 選択してください
+        .product-main__contents__shippingsection__items
+          %p.description
+            発送までの日数
+          %span.caution
+            必須
+        .product-main__contents__shippingsection__select
+          %select{name: "categoryId"}
+            %option{value: "0"} 選択してください
 
 
         
@@ -66,11 +96,11 @@
     .product-footer__upper
       %ul.menu
         %li.menu__list
-          = link_to "プライバシーポリシー","#"
+          = link_to "プライバシーポリシー","#", class: "menu__list__policy"
         %li.menu__list
-          = link_to "Fleamarket利用規約","#"
+          = link_to "Fleamarket利用規約","#", class: "menu__list__policy"
         %li.menu__list
-          = link_to "特定商取引に関する表記","#"
+          = link_to "特定商取引に関する表記","#", class: "menu__list__policy"
     .product-footer__bottom
       = link_to image_tag("logo.png", alt: "", class: "product-footer__bottom__monochrome"), "#"
       %p © Fleamarket, Inc.

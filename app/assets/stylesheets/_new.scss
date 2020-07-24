@@ -2,11 +2,6 @@
   box-sizing: border-box;
 }
 
-// すべてのaタグのリンクのデコレーション打ち消し
-a {
-  text-decoration: none;
-}
-
 .Product{
   width: 100vw;
   background-color: #EEEEEE;
@@ -30,7 +25,6 @@ a {
 // フォーム部分
 .product-main{
   width: 700px;
-  height: calc(200vh - 278px);
   margin: 0 auto;
   background-color: white;
   display: block;
@@ -97,10 +91,47 @@ a {
         margin-top: 16px;
       }
     }
+    // ほぼitemsectionを引用しています
     &__detailsection{
       font-size: 14px;
       padding: 40px;
       border-bottom: 1px solid #EEEEEE;
+      &__details{
+        color: rgb(136, 136, 136);
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 24px;
+      }
+      &__items{
+        display: flex;
+      }
+      &__input{
+        margin-top: 25px;
+        margin-bottom: 16px;
+        display: inline-block;
+        position: relative;
+        width: 100%;
+      }
+      &__select{
+        margin-top: 25px;
+        margin-bottom: 16px;
+        display: inline-block;
+        position: relative;
+        width: 100%;
+      }
+    }
+    // ほぼ上detailsectionのcssを適用しています
+    &__shippingsection{
+      font-size: 14px;
+      padding: 40px;
+      border-bottom: 1px solid #EEEEEE;
+      &__details{
+        color: rgb(136, 136, 136);
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 24px;
+        display: flex;
+      }
       &__items{
         display: flex;
       }
@@ -164,7 +195,7 @@ select{
 }
 
 
-// 「必須」部分。Pタグ部分
+// 「必須」部分。Pタグ部分まとめ
 .caution{
   display: inline-block;
   background-color:red;
@@ -182,8 +213,17 @@ select{
 }
 
 .title{
-  margin-bottom: 20px;
+  
   font-weight: bold;
+}
+
+// (?)クエスチョンマークのcss
+.fas{
+  fill: rgb(0, 149, 238) ;
+  height: 16px;
+  margin-left: 4px;
+  vertical-align: -3px;
+  width: 16px;
 }
 
 // fontawesomeカメラ部分
@@ -195,7 +235,7 @@ select{
 
 // footer部分
 .product-footer{
-  height: 150px;
+
   background-color: #EEEEEE;
   &__upper{
     height: 80px;
@@ -219,6 +259,10 @@ select{
       padding-top: 10px;
       margin-right: 25px;
       font-size: 12px;
+      &__policy{
+        text-decoration: none;
+        color: black;
+      }
     }
   }
 }
