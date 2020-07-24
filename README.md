@@ -39,10 +39,10 @@ Things you may want to cover:
 |icon|string||
 
 ### Association
-- has_many :items
+- has_many :items dependent: :destroy
 - has_one :address
-- has_many :comments
-- has_many :favorites
+- has_many :comments  dependent: :destroy
+- has_many :favorites dependent: :destroy
 - has_one :card
 
 ## favoritesテーブル
@@ -84,10 +84,10 @@ Things you may want to cover:
 ## itemsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
-|introduction|string|null: false|
+|name|enum|null: false|
+|introduction|enum|null: false|
 |image_id|references|null: false|
-|condition|string|null: false|
+|condition|enum|null: false|
 |price|integer|null: false|
 |category_id|references|null: false|
 |shipping_cost|boolean|null: false|
@@ -100,7 +100,7 @@ Things you may want to cover:
 ### Association
 -belongs_to :user
 -belongs_to :category
--has_many :images
+-has_many :images dependent: :destroy
 
 
 ## commentsテーブル
@@ -139,7 +139,8 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|null: false, foreign_key: true|
-
+|customer_id|string|null: false|
+|card_id|string|null: false|
 ### Association
 -belongs_to :user
 
