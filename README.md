@@ -40,10 +40,10 @@ Things you may want to cover:
 
 ### Association
 - has_many :items dependent: :destroy
-- has_one :address
+- has_one :address  dependent: :destroy
 - has_many :comments  dependent: :destroy
 - has_many :favorites dependent: :destroy
-- has_one :card
+- has_one :card dependent: :destroy
 
 ## favoritesテーブル
 |Column|Type|Options|
@@ -52,8 +52,8 @@ Things you may want to cover:
 |item_id|references|foreign_key: true|
 
 ### Association
--belongs_to :user
--belongs_to :item
+- belongs_to :user
+- belongs_to :item
 
 
 ## addressesテーブル
@@ -67,7 +67,7 @@ Things you may want to cover:
 |tel|string||
 
 ### Association
--belongs_to :user
+- belongs_to :user
 
 
 ## SNS_credentialsテーブル
@@ -78,7 +78,7 @@ Things you may want to cover:
 |user_id|references|foreign_key: true|
 
 ### Association
--belongs_to :user
+- belongs_to :user
 
 
 ## itemsテーブル
@@ -98,9 +98,9 @@ Things you may want to cover:
 |size|string||
 
 ### Association
--belongs_to :user
--belongs_to :category
--has_many :images dependent: :destroy
+- belongs_to :user
+- belongs_to :category
+- has_many :images dependent: :destroy
 
 
 ## commentsテーブル
@@ -111,8 +111,8 @@ Things you may want to cover:
 |content|text|null: false|
 
 ### Association
--belongs_to :user
--belongs_to :item
+- belongs_to :user
+- belongs_to :item
 
 
 ## imagesテーブル
@@ -122,7 +122,7 @@ Things you may want to cover:
 |item_id|references|null: false, foreign_key: true|
 
 ### Association
--belongs_to :item
+- belongs_to :item
 
 
 ## categoriesテーブル
@@ -132,7 +132,7 @@ Things you may want to cover:
 |ancestory|string||
 
 ### Association
--has_many :items
+- has_many :items
 
 
 ## cardsテーブル
@@ -142,7 +142,7 @@ Things you may want to cover:
 |customer_id|string|null: false|
 |card_id|string|null: false|
 ### Association
--belongs_to :user
+- belongs_to :user
 
 
 ## brandsテーブル
@@ -151,5 +151,5 @@ Things you may want to cover:
 |name|string|unique :true|
 
 ### Association
--has_many :items
+- has_many :items
 
