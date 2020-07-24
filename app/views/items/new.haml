@@ -33,6 +33,29 @@
           %textarea{name: "description", rows: 7, placeholder: "商品の説明（必須1,000文字以内）"}
         .product-main__contents__itemsection__textareacount
           0/1000
+      .product-main__contents__detailsection
+        .product-main__contents__detailsection__items
+          %p.description
+            カテゴリー
+          %span.caution
+            必須
+        .product-main__contents__detailsection__input
+          %select{name: "categoryId"}
+        .product-main__contents__detailsection__items
+          %p.description
+            ブランド
+          %span.caution
+            任意
+        .product-main__contents__detailsection__input
+          %input{type: "text", name: "name", placeholder: "例）島村", autocomplete: "off"}
+        .product-main__contents__detailsection__items
+          %p.description
+            商品の状態
+          %span.caution
+            必須
+        .product-main__contents__detailsection__input
+          %input{type: "text", name: "name", placeholder: "選択してください", autocomplete: "off"}
+
 
         
 

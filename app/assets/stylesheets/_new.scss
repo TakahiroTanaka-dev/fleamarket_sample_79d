@@ -82,7 +82,7 @@ a {
         margin-top: 25px;
         display: inline-block;
         position: relative;
-        width: 620px;
+        width: 100%;
       }
       &__second-items{
         display: flex;
@@ -95,6 +95,21 @@ a {
         text-align: right;
         font-family: Arial,sans-serif;
         margin-top: 16px;
+      }
+    }
+    &__detailsection{
+      font-size: 14px;
+      padding: 40px;
+      border-bottom: 1px solid #EEEEEE;
+      &__items{
+        display: flex;
+      }
+      &__input{
+        margin-top: 25px;
+        margin-bottom: 16px;
+        display: inline-block;
+        position: relative;
+        width: 100%;
       }
     }
   }
