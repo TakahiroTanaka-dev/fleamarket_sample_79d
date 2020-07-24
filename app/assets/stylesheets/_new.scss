@@ -8,7 +8,6 @@ a {
 }
 
 .Product{
-  height: 220vh;
   width: 100vw;
   background-color: #EEEEEE;
 }
@@ -73,13 +72,62 @@ a {
       }
     }
     &__itemsection{
-      height: 370px;
       font-size: 14px;
       padding: 40px;
       border-bottom: 1px solid #EEEEEE;
+      &__items{
+        display: flex;
+      }
+      &__input{
+        margin-top: 25px;
+        display: inline-block;
+        position: relative;
+        width: 620px;
+      }
+      &__second-items{
+        display: flex;
+        margin-top: 20px;
+      }
+      &__textarea{
+        margin-top: 16px;
+      }
+      &__textareacount{
+        text-align: right;
+        font-family: Arial,sans-serif;
+        margin-top: 16px;
+      }
     }
   }
 }
+
+// 入力画面一覧まとめ
+input{
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: inherit;
+  height: 48px;
+  margin: 0;
+  outline: none;
+  padding: 0 16px;
+  width: inherit;
+}
+
+textarea{
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: #222;
+  font-size: 16px;
+  margin: 0;
+  outline: none;
+  padding: 13px 16px;
+  resize: vertical;
+  vertical-align: middle;
+}
+
 
 // 「必須」部分。Pタグ部分
 .caution{

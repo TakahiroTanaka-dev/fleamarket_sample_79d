@@ -16,6 +16,24 @@
           %i.fa.fa-camera
           %p ドラッグアンドドロップ<br>またはクリックしてファイルをアップロード
       .product-main__contents__itemsection
+        .product-main__contents__itemsection__items
+          %p.description
+            商品名
+          %span.caution
+            必須
+        .product-main__contents__itemsection__input
+          %input{type: "text", name: "name", placeholder: "40文字まで", autocomplete: "off"}
+        
+        .product-main__contents__itemsection__second-items
+          %p.description
+            商品の説明
+          %span.caution
+            必須
+        .product-main__contents__itemsection__textarea
+          %textarea{name: "description", rows: 7, placeholder: "商品の説明（必須1,000文字以内）"}
+        .product-main__contents__itemsection__textareacount
+          0/1000
+
         
 
   .product-footer
