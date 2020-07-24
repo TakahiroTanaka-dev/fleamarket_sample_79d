@@ -68,3 +68,6 @@ end
 
 # hamlを追加
 gem "haml-rails"
+
+# fontawesome
+gem 'font-awesome-sass'

@@ -40,14 +40,36 @@ a {
     width: 100%;
     margin: 0 auto;
     &__imagesection{
-      height: 300px;
+      height: 370px;
       font-size: 14px;
       padding: 40px;
+      border-bottom: 1px solid #EEEEEE;
       &__items{
         display: flex;
       }
       &__imagecount{
         margin-top: 16px;
+        margin-bottom: 16px;
+      }
+      &__imagepost{
+        text-align: center;
+        align-content: center;
+        -webkit-box-align: center;
+        align-items: center;
+        background-color: rgb(245, 245, 245);
+        cursor: pointer;
+        display: flex;
+        height: 200px;
+        flex-wrap: wrap;
+        -webkit-box-pack: center;
+        justify-content: center;
+        position: relative;
+        border-width: 1px;
+        border-style: dashed;
+        border-color: rgb(204, 204, 204);
+        border-image: initial;
+        transition: all 0.5s ease-out 0s;
+        position: relative;
       }
     }
   }
@@ -55,11 +77,24 @@ a {
 
 // 「必須」部分。Pタグ部分
 .caution{
-
+  display: inline-block;
+  background-color:red;
+  color: white;
+  font-size: 11px;
+  margin-left:8px;
+  padding:2px 4px;
+  border-radius: 2px;
+  vertical-align: top;
+  font-weight: bold;
 }
 
 .description{
   margin-right: 10px;
+}
+
+// fontawesomeカメラ部分
+.fa{
+  position: absolute;
 }
 
 // footer部分
@@ -91,4 +126,3 @@ a {
     }
   }
 }
-
