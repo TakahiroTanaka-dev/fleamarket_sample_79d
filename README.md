@@ -44,7 +44,6 @@ Things you may want to cover:
 - has_many :comments
 - has_many :favorites
 - has_one :card
--has_many :purchased
 
 ## favoritesテーブル
 |Column|Type|Options|
