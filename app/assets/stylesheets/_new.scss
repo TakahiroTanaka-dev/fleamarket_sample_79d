@@ -72,6 +72,12 @@ a {
         position: relative;
       }
     }
+    &__itemsection{
+      height: 370px;
+      font-size: 14px;
+      padding: 40px;
+      border-bottom: 1px solid #EEEEEE;
+    }
   }
 }
 
