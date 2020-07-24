@@ -86,7 +86,6 @@ Things you may want to cover:
 |------|----|-------|
 |name|enum|null: false|
 |introduction|enum|null: false|
-|image_id|references|null: false, foreign_key: true|
 |condition|enum|null: false|
 |price|integer|null: false|
 |category_id|references|null: false, foreign_key: true|
@@ -148,7 +147,7 @@ Things you may want to cover:
 ## brandsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|unique :true|
+|name|string|null: false,unique :true|
 
 ### Association
 - has_many :items
