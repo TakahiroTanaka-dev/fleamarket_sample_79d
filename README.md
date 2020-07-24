@@ -86,7 +86,7 @@ Things you may want to cover:
 |------|----|-------|
 |name|string|null: false|
 |introduction|string|null: false|
-|condition|references|null: false, foreign_key: true|
+|condition(enum)|integer|null: false|
 |price|integer|null: false|
 |category_id|references|null: false, foreign_key: true|
 |shipping_cost|boolean|null: false|
