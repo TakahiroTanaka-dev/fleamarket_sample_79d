@@ -63,7 +63,6 @@
         .product-main__contents__shippingsection__details
           %p.title 配送について
           %a.fas.fa-question-circle
-
         .product-main__contents__shippingsection__items
           %p.description
             配送料の負担
@@ -88,6 +87,28 @@
         .product-main__contents__shippingsection__select
           %select{name: "categoryId"}
             %option{value: "0"} 選択してください
+      .product-main__contents__pricesection
+        .product-main__contents__pricesection__details
+          %p.title 価格（¥300〜9,999,999）
+          %a.fas.fa-question-circle
+        .product-main__contents__pricesection__items
+          .product-main__contents__pricesection__items__left
+            %p.description
+              販売価格
+            %span.caution
+              必須
+          .product-main__contents__pricesection__items__right
+            ¥
+            %input{type: "text", name: "name", placeholder: "例）島村", autocomplete: "off"}
+        .product-main__contents__pricesection__items
+          .product-main__contents__pricesection__items__left
+            %p.title
+              販売手数料（10%）
+          .product-main__contents__pricesection__items__right
+            %span ー
+      
+            
+        
 
 
         

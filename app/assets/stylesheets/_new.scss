@@ -150,6 +150,27 @@
         width: 100%;
       }
     }
+    &__pricesection{
+      font-size: 14px;
+      padding: 40px;
+      border-bottom: 1px solid #EEEEEE; 
+      &__details{
+        color: rgb(136, 136, 136);
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 24px;
+        display: flex;
+      }
+      &__items{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 24px;
+        &__left{
+          display: flex;
+          align-items: center;
+        }
+      }
+    }
   }
 }
 
@@ -206,6 +227,7 @@ select{
   border-radius: 2px;
   vertical-align: top;
   font-weight: bold;
+  height: 20px;
 }
 
 .description{
