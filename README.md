@@ -42,7 +42,7 @@
 |city|string|null: false|
 |block|string|null: false|
 |building|string||
-|tel|string||
+|phone_number|string||
 
 ### Association
 - belongs_to :user
