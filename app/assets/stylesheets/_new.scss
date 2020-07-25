@@ -246,7 +246,7 @@ a{
 }
 
 // 入力画面一覧まとめ
-input{
+.input-item{
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
@@ -260,8 +260,20 @@ input{
 }
 
 .input-price{
-  
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: inherit;
+  height: 48px;
+  margin: 0;
+  outline: none;
+  padding: 0 16px;
+  width: inherit;
+  text-align: right;
 }
+
+
 
 textarea{
   width: 100%;
