@@ -1,3 +1,4 @@
+@import "mixin";
 *{
   box-sizing: border-box;
 }
@@ -71,9 +72,7 @@ a{
       }
     }
     &__itemsection{
-      font-size: 14px;
-      padding: 40px;
-      border-bottom: 1px solid #EEEEEE;
+      @include section();
       &__items{
         display: flex;
       }
@@ -98,9 +97,7 @@ a{
     }
     // ほぼitemsectionを引用しています
     &__detailsection{
-      font-size: 14px;
-      padding: 40px;
-      border-bottom: 1px solid #EEEEEE;
+      @include section();
       &__details{
         color: rgb(136, 136, 136);
         font-size: 14px;
@@ -127,9 +124,7 @@ a{
     }
     // ほぼ上detailsectionのcssを適用しています
     &__shippingsection{
-      font-size: 14px;
-      padding: 40px;
-      border-bottom: 1px solid #EEEEEE;
+      @include section();
       &__details{
         color: rgb(136, 136, 136);
         font-size: 14px;
@@ -157,9 +152,7 @@ a{
     }
     // 価格部分のcss
     &__pricesection{
-      font-size: 14px;
-      padding: 40px;
-      border-bottom: 1px solid #EEEEEE; 
+      @include section();
       &__details{
         color: rgb(136, 136, 136);
         font-size: 14px;
@@ -179,9 +172,7 @@ a{
     }
     // 販売利益部分のcss
     &__profitsection{
-      font-size: 14px;
-      padding: 40px;
-      border-bottom: 1px solid #EEEEEE; 
+      @include section();
       &__items{
         display: flex;
         justify-content: space-between;
