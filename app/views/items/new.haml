@@ -47,7 +47,7 @@
         .product-main__contents__detailsection__items
           %p.description
             ブランド
-          %span.caution
+          %span.unnecessary
             任意
         .product-main__contents__detailsection__input
           %input{type: "text", name: "name", placeholder: "例）島村", autocomplete: "off"}
@@ -99,18 +99,16 @@
               必須
           .product-main__contents__pricesection__items__right
             ¥
-            %input{type: "text", name: "name", placeholder: "例）島村", autocomplete: "off"}
+            %input{type: "text", name: "name", placeholder: "0", autocomplete: "off", class:"input-price"}
         .product-main__contents__pricesection__items
           .product-main__contents__pricesection__items__left
-            %p.title
-              販売手数料（10%）
+            %p 販売手数料（10%）
           .product-main__contents__pricesection__items__right
             %span ー
       .product-main__contents__profitsection
         .product-main__contents__profitsection__items
           .product-main__contents__profitsection__items__left
-            %p.title
-              販売利益
+            %p 販売利益
           .product-main__contents__profitsection__items__right
             %span ー
         .product-main__contents__profitsection__submit

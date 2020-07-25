@@ -259,6 +259,10 @@ input{
   width: inherit;
 }
 
+.input-price{
+  
+}
+
 textarea{
   width: 100%;
   border: 1px solid #ccc;
@@ -287,10 +291,23 @@ select{
 }
 
 
-// 「必須」部分。Pタグ部分まとめ
+// 「必須」「任意」部分。Pタグ部分まとめ
 .caution{
   display: inline-block;
   background-color:red;
+  color: white;
+  font-size: 11px;
+  margin-left:8px;
+  padding:2px 4px;
+  border-radius: 2px;
+  vertical-align: top;
+  font-weight: bold;
+  height: 20px;
+}
+
+.unnecessary{
+  display: inline-block;
+  background-color:gray;
   color: white;
   font-size: 11px;
   margin-left:8px;
@@ -306,7 +323,6 @@ select{
 }
 
 .title{
-  
   font-weight: bold;
 }
 
