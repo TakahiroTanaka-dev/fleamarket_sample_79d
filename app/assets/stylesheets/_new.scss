@@ -171,6 +171,20 @@
         }
       }
     }
+    &__profitsection{
+      font-size: 14px;
+      padding: 40px;
+      border-bottom: 1px solid #EEEEEE; 
+      &__items{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 24px;
+        &__left{
+          display: flex;
+          align-items: center;
+        }
+      }
+    }
   }
 }
 
