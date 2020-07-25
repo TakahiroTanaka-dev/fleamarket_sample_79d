@@ -63,7 +63,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|introduction|string|null: false|
+|description|text|null: false|
 |condition(enum)|integer|null: false|
 |price|integer|null: false|
 |category_id|references|null: false, foreign_key: true|
