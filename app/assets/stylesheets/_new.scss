@@ -2,6 +2,11 @@
   box-sizing: border-box;
 }
 
+// aタグの下線打ち消し
+a{
+  text-decoration: none;
+}
+
 .Product{
   width: 100vw;
   background-color: #EEEEEE;
@@ -150,6 +155,7 @@
         width: 100%;
       }
     }
+    // 価格部分のcss
     &__pricesection{
       font-size: 14px;
       padding: 40px;
@@ -171,6 +177,7 @@
         }
       }
     }
+    // 販売利益部分のcss
     &__profitsection{
       font-size: 14px;
       padding: 40px;
@@ -184,8 +191,58 @@
           align-items: center;
         }
       }
+      &__submit{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        // 一番上の赤いボタン
+        &__upper{
+          margin: 40px 0 0;
+          background: #ea352d;
+          border: 1px solid #ea352d;
+          color: #fff;
+          display: block;
+          width: 45%;
+          line-height: 48px;
+          font-size: 14px;
+          transition: all ease-out .3s;
+          text-align: center;
+          font-weight: bold;
+        }
+        // 2番上のグレーボタン
+        &__bottom{
+          display: block;
+          line-height: 48px;
+          font-size: 14px;
+          width: 45%;
+          text-align: center;
+          text-decoration: none;
+          margin: 24px auto 0px;
+          color: white;
+          background-color:#AAAAAA;
+          font-weight: bold;
+        }
+        // もどるボタン
+        &__return{
+          margin-top: 24px;
+          color: skyblue;
+          margin-bottom: 32px;
+        }
+        // 禁止事項などのcss
+        &__prohibition{
+          font-size: 10px;
+        }
+      }
     }
   }
+}
+
+// 青文字のリンク一覧
+.return-blue{
+  margin-top: 24px;
+  color: skyblue;
+  text-decoration: none;
 }
 
 // 入力画面一覧まとめ
