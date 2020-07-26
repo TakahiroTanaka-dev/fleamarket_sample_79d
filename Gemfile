@@ -66,8 +66,8 @@ group :production do
   gem 'unicorn'
 end
 
-# hamlを追加
-gem "haml-rails"
-
 # fontawesome
 gem 'font-awesome-sass'
+
+gem 'haml-rails'
+gem 'devise'
