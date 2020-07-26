@@ -1,0 +1,380 @@
+@import "mixin";
+*{
+  box-sizing: border-box;
+}
+
+// aタグの下線打ち消し
+a{
+  text-decoration: none;
+}
+
+.Product{
+  width: 100vw;
+  background-color: #EEEEEE;
+}
+
+// ヘッダー部分
+.product-header{
+  height: 128px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  background-color: #EEEEEE;
+  &__logo{
+    height: 50px;
+    width: 150px;
+    margin-right: 10px;
+  }
+}
+
+// フォーム部分
+.product-main{
+  width: 700px;
+  margin: 0 auto;
+  background-color: white;
+  display: block;
+  &__contents{
+    background-color:white;
+    width: 100%;
+    margin: 0 auto;
+    &__imagesection{
+      height: 370px;
+      font-size: 14px;
+      padding: 40px;
+      border-bottom: 1px solid #EEEEEE;
+      &__items{
+        display: flex;
+      }
+      &__imagecount{
+        margin-top: 16px;
+        margin-bottom: 16px;
+      }
+      &__imagepost{
+        text-align: center;
+        align-content: center;
+        -webkit-box-align: center;
+        align-items: center;
+        background-color: rgb(245, 245, 245);
+        cursor: pointer;
+        display: flex;
+        height: 200px;
+        flex-wrap: wrap;
+        -webkit-box-pack: center;
+        justify-content: center;
+        position: relative;
+        border-width: 1px;
+        border-style: dashed;
+        border-color: rgb(204, 204, 204);
+        border-image: initial;
+        transition: all 0.5s ease-out 0s;
+        position: relative;
+      }
+    }
+    &__itemsection{
+      @include section();
+      &__items{
+        display: flex;
+      }
+      &__input{
+        margin-top: 25px;
+        display: inline-block;
+        position: relative;
+        width: 100%;
+      }
+      &__second-items{
+        display: flex;
+        margin-top: 20px;
+      }
+      &__textarea{
+        margin-top: 16px;
+      }
+      &__textareacount{
+        text-align: right;
+        font-family: Arial,sans-serif;
+        margin-top: 16px;
+      }
+    }
+    // ほぼitemsectionを引用しています
+    &__detailsection{
+      @include section();
+      &__details{
+        color: rgb(136, 136, 136);
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 24px;
+      }
+      &__items{
+        display: flex;
+      }
+      &__input{
+        margin-top: 25px;
+        margin-bottom: 16px;
+        display: inline-block;
+        position: relative;
+        width: 100%;
+      }
+      &__select{
+        margin-top: 25px;
+        margin-bottom: 16px;
+        display: inline-block;
+        position: relative;
+        width: 100%;
+      }
+    }
+    // ほぼ上detailsectionのcssを適用しています
+    &__shippingsection{
+      @include section();
+      &__details{
+        color: rgb(136, 136, 136);
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 24px;
+        display: flex;
+      }
+      &__items{
+        display: flex;
+      }
+      &__input{
+        margin-top: 25px;
+        margin-bottom: 16px;
+        display: inline-block;
+        position: relative;
+        width: 100%;
+      }
+      &__select{
+        margin-top: 25px;
+        margin-bottom: 16px;
+        display: inline-block;
+        position: relative;
+        width: 100%;
+      }
+    }
+    // 価格部分のcss
+    &__pricesection{
+      @include section();
+      &__details{
+        color: rgb(136, 136, 136);
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 24px;
+        display: flex;
+      }
+      &__items{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 24px;
+        &__left{
+          display: flex;
+          align-items: center;
+        }
+      }
+    }
+    // 販売利益部分のcss
+    &__profitsection{
+      @include section();
+      &__items{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 24px;
+        &__left{
+          display: flex;
+          align-items: center;
+        }
+      }
+      &__submit{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        // 一番上の赤いボタン
+        &__upper{
+          margin: 40px 0 0;
+          background: #ea352d;
+          border: 1px solid #ea352d;
+          color: #fff;
+          display: block;
+          width: 45%;
+          line-height: 48px;
+          font-size: 14px;
+          transition: all ease-out .3s;
+          text-align: center;
+          font-weight: bold;
+        }
+        // 2番上のグレーボタン
+        &__bottom{
+          display: block;
+          line-height: 48px;
+          font-size: 14px;
+          width: 45%;
+          text-align: center;
+          text-decoration: none;
+          margin: 24px auto 0px;
+          color: white;
+          background-color:#AAAAAA;
+          font-weight: bold;
+        }
+        // もどるボタン
+        &__return{
+          margin-top: 24px;
+          color: skyblue;
+          margin-bottom: 32px;
+        }
+        // 禁止事項などのcss
+        &__prohibition{
+          font-size: 10px;
+        }
+      }
+    }
+  }
+}
+
+// 青文字のリンク一覧
+.return-blue{
+  margin-top: 24px;
+  color: skyblue;
+  text-decoration: none;
+}
+
+// 入力画面一覧まとめ
+.input-item{
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: inherit;
+  height: 48px;
+  margin: 0;
+  outline: none;
+  padding: 0 16px;
+  width: inherit;
+}
+
+.input-price{
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: inherit;
+  height: 48px;
+  margin: 0;
+  outline: none;
+  padding: 0 16px;
+  width: inherit;
+  text-align: right;
+}
+
+
+
+textarea{
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: #222;
+  font-size: 16px;
+  margin: 0;
+  outline: none;
+  padding: 13px 16px;
+  resize: vertical;
+  vertical-align: middle;
+}
+
+select{
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: inherit;
+  height: 48px;
+  margin: 0;
+  outline: none;
+  padding: 0 16px;
+  width: inherit;
+}
+
+
+// 「必須」「任意」部分。Pタグ部分まとめ
+.caution{
+  display: inline-block;
+  background-color:red;
+  color: white;
+  font-size: 11px;
+  margin-left:8px;
+  padding:2px 4px;
+  border-radius: 2px;
+  vertical-align: top;
+  font-weight: bold;
+  height: 20px;
+}
+
+.unnecessary{
+  display: inline-block;
+  background-color:gray;
+  color: white;
+  font-size: 11px;
+  margin-left:8px;
+  padding:2px 4px;
+  border-radius: 2px;
+  vertical-align: top;
+  font-weight: bold;
+  height: 20px;
+}
+
+.description{
+  margin-right: 10px;
+}
+
+.title{
+  font-weight: bold;
+}
+
+// (?)クエスチョンマークのcss
+.fas{
+  color: rgb(0, 149, 238) ;
+  height: 16px;
+  margin-left: 4px;
+  vertical-align: -3px;
+  width: 16px;
+}
+
+// fontawesomeカメラ部分
+.fa{
+  position: absolute;
+  top: 50px;
+  font-size: 23px;
+}
+
+// footer部分
+.product-footer{
+
+  background-color: #EEEEEE;
+  &__upper{
+    height: 80px;
+    text-align: center;
+    
+  }
+  &__bottom{
+    text-align: center;
+    margin:0 auto;
+    &__monochrome{
+      height: 50px;
+      width: 150px;
+    }
+  }
+
+  // プライバシーポリシーとかの部分
+  .menu{
+    display: flex;
+    justify-content: center;
+    &__list{
+      padding-top: 10px;
+      margin-right: 25px;
+      font-size: 12px;
+      &__policy{
+        text-decoration: none;
+        color: black;
+      }
+    }
+  }
+}

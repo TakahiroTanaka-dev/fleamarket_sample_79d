@@ -1,0 +1,98 @@
+-# = render 'layouts/header'
+.item__show
+  .item__show__wrapper
+    .item__showBox
+      .item__showBox__name
+        アイテム１
+      .item__showBox__body
+        %ul
+          %li
+            = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png", class: "show__image__main"
+            %ul
+              %li
+                = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png", class: "show__image__sub"
+              %li
+                = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/14/a001.png", class: "show__image__sub"
+              %li
+                = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/15/a003.png", class: "show__image__sub"
+              %li
+                = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/15/a003.png", class: "show__image__sub"
+              %li
+                = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/15/a003.png", class: "show__image__sub"
+      .item__showBox__price
+        .item__showBox__price--main
+          ￥30000
+        .item__showBox__price--detail
+          (税込)
+          送料込み
+      .item__showBox__detail
+        親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から首を出していたら、同級生の一人が冗談に、いくら威張っても、そこから飛び降りる事は出来まい。弱虫やーい。と囃したからである。小使に負ぶさって帰って来た時、おやじが大きな眼をして二階ぐらいから飛び降りて腰
+      %table.item__showBox__table
+        %tbody
+          %tr
+            %th 出品者
+            %td hoge
+          %tr
+            %th カテゴリー
+            %td
+              = link_to 'ベビー・キッズ', '#', class: 'dataLink'
+              %br
+              = link_to 'ベビー服(男女兼用) ~95cm', '#', class: 'dataLink'
+              %br
+              = link_to 'アウター', '#', class: 'dataLink'
+          %tr
+            %th ブランド
+            %td
+          %tr
+            %th 商品の状態
+            %td 未使用に近い
+          %tr
+            %th 配送料の負担
+            %td 送料込み（出品者負担）
+          %tr
+            %th 配送元の地域
+            %td
+              = link_to '岩手県', '#', class: 'dataLink'
+          %tr
+            %th 発送日の目安
+            %td 4-7日で発送
+      %ul.item__showBox__optionalArea
+        %li.item__showBox__optionalArea--likeBtn
+          = link_to 'お気に入り 0', '#' 
+        %li.item__showBox__optionalArea--optionalBtn
+          = link_to '不適切な商品の通報', '#'
+    .item__show__commentBox
+      %textarea.item__show__commentBox--textarea
+      .item__show__commentBox--attention
+        相手のことを考え丁寧なコメントを心がけましょう。
+        %br/
+        不快な言葉遣いなどは利用制限や退会処分となることがあります。
+      %button.item__show__commentBox--submit{type: "submit"}
+        コメントする
+    %ul.pagination
+      %li.fa.fa-angle-left
+        = link_to '前の商品', '#', class: 'fa-angle'
+      %li.fa.fa-angle-right
+        = link_to '後ろの商品', '#', class: 'fa-angle'
+    .item__show__relatedItems
+      = link_to 'ベビー・キッズをもっと見る', '#', class: 'item__show__relatedItems'
+    .item__show__relatedLists
+      .item__show__relatedLists--item
+        .item__show__relatedLists--image
+          = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/15/a003.png"
+        .item__show__related__list--body
+          .item__show__related__list--name
+            ee
+          .item__show__related__list--details
+            %ul
+              %li 1000円
+      .item__show__relatedLists--item
+        .item__show__relatedLists--image
+          = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/15/a003.png"
+        .item__show__related__list--body
+          .item__show__related__list--name
+            ee
+          .item__show__related__list--details
+            %ul
+              %li 1000円
+-# = render 'layouts/footer'
