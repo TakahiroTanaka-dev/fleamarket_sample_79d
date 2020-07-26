@@ -34,4 +34,11 @@
           = f.text_field :cvc, placeholder: "カード背面4桁もしくは3桁の番号", class: "CardInput"
       .CardForm__content
         = f.submit "登録する", class: "TsurutaSubmit"
-      
+  .TsurutaTerms
+    = link_to "#", class: "TsurutaTerm" do
+      プライバシーポリシー
+    = link_to "#", class: "TsurutaTerm" do
+      利用規約
+    = link_to "#", class: "TsurutaTerm" do
+      特定商取引に関する表記
+  = image_tag src="logo-white.png", class: "TsurutaIcon2"
