@@ -280,8 +280,8 @@ DEPENDENCIES
   capistrano-rbenv
   capistrano3-unicorn
   capybara (>= 2.15)
-  font-awesome-sass
   devise
+  font-awesome-sass
   haml-rails
   jbuilder (~> 2.7)
   listen (~> 3.2)
