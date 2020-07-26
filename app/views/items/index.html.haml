@@ -3,7 +3,89 @@
 .main
   =render "items/appintroduction"
   .pickupcategory
+    %h2.pick-head
+      ピックアップカテゴリー
+    .pick-box
+      .pbox-top
+        = link_to '#' do
+          %h2.pbox-title
+            新規投稿商品
+      .pbox-lists
+        .pbox-list
+          = link_to '#' do
+            .pbox-image
+              = image_tag 'material/smple/IMG_9072.jpeg', class: "pbox-img"
+            .pbox-text
+              .p-name
+                ee
+              .p-details
+                %ul
+                  %li
+                    1000円
+                  %li
+                    = icon('fas', 'star', class: 'likeicon')
+                    0
+                %p
+                  (税込)
+        .pbox-lists
+        .pbox-list
+          = link_to '#' do
+            .pbox-image
+              = image_tag 'material/smple/a007.png', class: "pbox-img"
+            .pbox-text
+              .p-name
+                product3
+              .p-details
+                %ul
+                  %li
+                    30000円
+                  %li
+                    = icon('fas', 'star', class: 'likeicon')
+                    1
+                %p
+                  (税込)
   .pickupcategory
+    %h2.pick-head
+      ピックアップブランド
+    .pick-box
+      .pbox-top
+        = link_to '#' do
+          %h2
+            アーカイバ
+      .pbox-lists
+        .pbox-list
+          = link_to '#' do
+            .pbox-image
+              = image_tag 'material/smple/IMG_9072.jpeg', class: "pbox-img"
+            .pbox-text
+              .name
+                ee
+              .details
+                %ul
+                  %li
+                    1000円
+                  %li
+                    = icon('fas', 'star', class: 'likeicon')
+                    0
+                %p
+                  (税込)
+        .pbox-lists
+        .pbox-list
+          = link_to '#' do
+            .pbox-image
+              = image_tag 'material/smple/a007.png', class: "pbox-img"
+            .pbox-text
+              .p-name
+                product3
+              .p-details
+                %ul
+                  %li
+                    30000円
+                  %li
+                    = icon('fas', 'star', class: 'likeicon')
+                    1
+                %p
+                  (税込)
 
 =render "layouts/appbanner"
 =render "layouts/footer"
