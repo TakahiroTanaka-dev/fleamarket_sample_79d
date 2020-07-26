@@ -1,0 +1,44 @@
+.CardForm
+  = image_tag src="logo.png", class: "TsurutaIcon" 
+  .CardForm__title
+    支払い方法
+  .CardForm__contents
+    = form_with model: @cards, local: true do |f|
+      .CardForm__content
+        %h3.CardForm__content__name
+          カード番号
+          %span.AddressForm__content__require 必須
+        .CardNumbar
+          = f.text_field :card_number, placeholder: "半角数字のみ", class: "CardInput"
+      .CardForm__content
+        = image_tag src="img_visa.svg", class: "CardImage"
+        = image_tag src="img_master.svg", class: "CardImage"
+        = image_tag src="img_jcb.svg", class: "CardImage"
+        = image_tag src="img_ae.svg", class: "CardImage"
+        = image_tag src="img_dc.svg", class: "CardImage"
+        = image_tag src="img_dcv.svg", class: "CardImage"
+      .CardForm__content
+        %h3.CardForm__content__name
+          有効期限
+          %span.AddressForm__content__require 必須
+        .CardExpire
+          = f.select :expire_month, [["01", 1], ["02", 2], ["03", 3], ["04", 4], ["05", 5], ["06", 6], ["07", 7], ["08", 8], ["09", 9], ["10", 10], ["11", 11], ["12", 12]], {}, class: "SelectMonth"
+          %span 月
+          = f.select :expire_year, [["20", 2020], ["21", 2021], ["22", 2022], ["23", 2023], ["24", 2024]], {}, class: "SelectYear"
+          %span 年
+      .CardForm__content
+        %h3.CardForm__content__name
+          セキリュティコード
+          %span.AddressForm__content__require 必須
+        .CardCVC
+          = f.text_field :cvc, placeholder: "カード背面4桁もしくは3桁の番号", class: "CardInput"
+      .CardForm__content
+        = f.submit "登録する", class: "TsurutaSubmit"
+  .TsurutaTerms
+    = link_to "#", class: "TsurutaTerm" do
+      プライバシーポリシー
+    = link_to "#", class: "TsurutaTerm" do
+      利用規約
+    = link_to "#", class: "TsurutaTerm" do
+      特定商取引に関する表記
+  = image_tag src="logo-white.png", class: "TsurutaIcon2"

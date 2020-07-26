@@ -1,0 +1,83 @@
+.CardForm {
+  background-color: #f0f0f0;
+  height: 100vh;
+  widows: 100vw;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: #333;
+  &__title {
+    width: 40%;
+    background-color: #fff;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 2px;
+  }
+  &__contents {
+    background-color: #fff;
+    width: 40%;
+    display: flex;
+    align-items: center; 
+    flex-direction: column;
+    padding-bottom: 50px;
+    margin-bottom: 50px;
+  }
+  &__content {
+    margin-top: 25px;
+    font-size: 13px;
+    &__name {
+      font-weight: bold;
+    }
+    &__require {
+      background-color: red;
+      color: white;
+      display: inline-block;
+      height: 20px;
+      width: 32px;
+      line-height: 20px;
+      text-align: center;
+      border-radius: 2px; 
+      margin-left: 5px;
+    }
+  }
+}
+
+.CardNumbar {
+  margin-top: 5px;
+}
+
+.CardExpire {
+  margin-top: 5px;
+}
+
+.CardCVC {
+  margin-top: 5px;
+}
+
+.CardInput {
+  height: 40px;
+  width: 280px;
+  padding-left: 10px;
+}
+
+.SelectMonth {
+  height: 43px;
+  width: 120px;
+  margin-right: 5px;
+  padding-left: 10px;
+}
+
+.SelectYear {
+  height: 43px;
+  width: 120px;
+  margin: 0 5px;
+  padding-left: 10px;
+}
+
+.CardImage {
+  height: 30px;
+  width: 45px;
+}

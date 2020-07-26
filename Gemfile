@@ -66,9 +66,9 @@ group :production do
   gem 'unicorn'
 end
 
+
 # fontawesome
 gem 'font-awesome-sass'
-
 gem 'haml-rails'
 gem 'devise'
 gem 'ancestry'

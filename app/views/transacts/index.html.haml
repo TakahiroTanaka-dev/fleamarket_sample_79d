@@ -1,0 +1,36 @@
+.TransactFrom
+  = image_tag src="logo.png", class: "TsurutaIcon"
+  .TransactBox
+    .TransactContents
+      .TransactContents__title
+        購入内容の確認
+      .TransactItem
+        .TransactItem__image
+          = image_tag src="呂布カルマ.jpg", class: "TransactItem-image"
+        .TransactItem__info
+          .TransactItem__name
+            呂布カルマ
+          .TransactItem__price
+            送料込み（税込）￥4,200
+      .TransactAmount
+        %h3 支払い金額
+        %p ￥4,200
+      .TransactMethod
+        %h5 支払い方法
+        = link_to "#", class: "MethodLink" do
+          登録してください
+      .TransactAddress
+        %h5 配送先
+        = link_to "#", class: "AddressLink" do
+          登録してください
+      .TransactButtom
+        = form_with model: @purchased, local: true do |f|
+          = f.submit '購入する', class: 'TsurutaSubmit'
+  .TsurutaTerms
+    = link_to "#", class: "TsurutaTerm" do
+      プライバシーポリシー
+    = link_to "#", class: "TsurutaTerm" do
+      利用規約
+    = link_to "#", class: "TsurutaTerm" do
+      特定商取引に関する表記
+  = image_tag src="logo-white.png", class: "TsurutaIcon2"
