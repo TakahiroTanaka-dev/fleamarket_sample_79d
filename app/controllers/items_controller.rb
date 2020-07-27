@@ -4,12 +4,19 @@ class ItemsController < ApplicationController
 
 
   def new
+    # ブランドテーブルとのアソシエーションいるなこれ
     @item=Item.new
     @item.images.new
   end
 
   def create
-    @item=Item.create(item_params)
+    @item=Item.new(item_params)
+    if @items.images.present?
+      @item.save
+      redirect_to root_path
+    else
+      redirect_to root_path
+    end
   end
 
 
