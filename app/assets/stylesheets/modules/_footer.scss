@@ -30,16 +30,16 @@
     width: 100%;
     margin: 0 auto;
 
-    p{
+    &__logo-text{
       font-size: 14px;
     }
   }
 }
 
-ul{
+.content-lists{
   list-style: none;
 
-  a{
+  .content-list{
     color: #fff;
     text-decoration: none;
     font-size: 12px;

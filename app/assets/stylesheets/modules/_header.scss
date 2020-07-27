@@ -57,7 +57,7 @@
         &__category{
           padding-right: 30px;
 
-          a{
+          .info-category{
             text-decoration: none;
             color: black;
           }
@@ -66,7 +66,7 @@
         &__brand{
           padding-right: 30px;
 
-          a{
+          .info-brand{
             text-decoration: none;
             color: black;
           }
@@ -80,7 +80,7 @@
         &__login{
           padding-left: 30px;
 
-          a{
+          .user-login{
             text-decoration: none;
             color: black;
           }
@@ -89,7 +89,7 @@
         &__new{
           padding-left: 30px;
 
-          a{
+          .user-new{
             text-decoration: none;
             color: black;
           }

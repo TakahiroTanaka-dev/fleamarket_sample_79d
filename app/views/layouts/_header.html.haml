@@ -2,7 +2,7 @@
   .top
     .top__main
       %h1.top__main__logo
-        = link_to '#' do
+        = link_to '#', class: "top-logo" do
           = image_tag 'material/logo/logo.png', size: '140x40'
       .search-form
         %form.search-box
@@ -13,15 +13,15 @@
     .info
       %ul.info__left
         %li.info__left__category
-          = link_to '#' do
+          = link_to '#', class: "info-category" do
             カテゴリー
         %li.info__left__brand
-          = link_to '#' do
+          = link_to '#', class: "info-brand" do
             ブランド
       %ul.info__right
         %li.info__right__login
-          = link_to '#' do
+          = link_to '#', class: "user-login" do
             ログイン
         %li.info__right__new
-          = link_to '#' do
+          = link_to '#', class: "user-new" do
             新規会員登録

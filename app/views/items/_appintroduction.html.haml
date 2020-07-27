@@ -8,9 +8,9 @@
       %br
       フリマアプリです
     .content__btn
-      = link_to '#' do
+      = link_to '#', class: "app-google-icon" do
         = image_tag 'material/logo/app-store-logo.png', size: "180x53", class: "abtn"
-      = link_to '#' do
+      = link_to '#', class: "app-google-icon" do
         = image_tag 'material/logo/google-play-logo.svg', size: "180x53", class: "gbtn"
 .introdaction
   %h2.subtitle
@@ -22,7 +22,8 @@
           1
         = image_tag 'material/pict/pict-reason-01.jpg', class: "pict-image"
       %h3.list__text
-        %span 3分
+        %span.text-green
+          3分
         ですぐに出品
       %p.list__discription
         スマホで入力するだけで簡単に出品できる！
@@ -32,7 +33,8 @@
           2
         = image_tag 'material/pict/pict-reason-02.jpg', class: "pict-image"
       %h3.list__text
-        %span シンプル 
+        %span.text-green
+          シンプル 
         で使いやすい
       %p.list__discription
         めんどくさい入力は必要なく、検索も購入もスムーズ！
@@ -43,7 +45,8 @@
         = image_tag 'material/pict/pict-reason-03.jpg', class: "pict-image"
       %h3.list__text
         手数料
-        %span 業界最安
+        %span.text-green
+          業界最安
       %p.list__discription
         最大3%でお得に出品&購入！
 .dl-content
@@ -57,9 +60,9 @@
       %br
       ほしかったあの商品に出会えるかもしれません。
     .btn
-      = link_to '#' do
+      = link_to '#', class: "app-google-icon" do
         = image_tag 'material/logo/app-store-logo.png', size: "180x53", class: "abtn"
-      = link_to '#' do
+      = link_to '#', class: "app-google-icon" do
         = image_tag 'material/logo/google-play-logo.svg', size: "180x53", class: "gbtn"
 .service-feature
   %h2.f-head
