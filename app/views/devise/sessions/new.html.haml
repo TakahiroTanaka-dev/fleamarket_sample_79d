@@ -1,0 +1,17 @@
+.Login
+  .Login__top
+    = link_to root_path do
+      = image_tag 'logo.png', class: 'Login__top-icon'
+  .Login__main
+    .Login__main__left
+    .Login__main__center
+      .Login__main__center__signup
+        .Login__main__center__signup-text アカウントをお持ちでない方はこちら
+        %br/
+        = link_to '新規会員登録', new_user_registration_path, class: 'Login__main__center__signup-btn'
+      = form_with model: @user, url: user_session_path, class: "Login__main__center__form", local: true do |f|
+        = f.email_field :email, autofocus: true, placeholder: 'メールアドレス', class: 'Login__main__center__form-email'
+        = f.password_field :password, placeholder: 'パスワード', class: 'Login__main__center__form-pass'
+        = f.submit "ログイン", class: 'Login__main__center__form-btn'
+    .Login__main__right
+  .Login__button
