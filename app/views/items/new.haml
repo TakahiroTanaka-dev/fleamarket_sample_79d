@@ -1,0 +1,149 @@
+.Product
+  .product-header
+    = link_to image_tag("logo.png", alt: "", class: "product-header__logo"), "#"
+  .product-main
+    .product-main__contents
+      .product-main__contents__imagesection
+        .product-main__contents__imagesection__items
+          %p.description
+            商品画像
+          %span.caution
+            必須
+        .product-main__contents__imagesection__imagecount
+          %p.description
+            10枚までアップロード可能です
+        .product-main__contents__imagesection__imagepost
+          %i.fa.fa-camera
+          %p ドラッグアンドドロップ<br>またはクリックしてファイルをアップロード
+      .product-main__contents__itemsection
+        .product-main__contents__itemsection__items
+          %p.description
+            商品名
+          %span.caution
+            必須
+        .product-main__contents__itemsection__input
+          %input{type: "text", name: "name", placeholder: "40文字まで", autocomplete: "off", class: "input-item"}
+        
+        .product-main__contents__itemsection__second-items
+          %p.description
+            商品の説明
+          %span.caution
+            必須
+        .product-main__contents__itemsection__textarea
+          %textarea{name: "description", rows: 7, placeholder: "商品の説明（必須1,000文字以内）"}
+        .product-main__contents__itemsection__textareacount
+          0/1000
+      .product-main__contents__detailsection
+        .product-main__contents__detailsection__details
+          %p.title 商品の詳細
+        .product-main__contents__detailsection__items
+          %p.description
+            カテゴリー
+          %span.caution
+            必須
+        .product-main__contents__detailsection__select
+          %select{name: "categoryId"}
+            %option{value: "0"} 選択してください
+        .product-main__contents__detailsection__items
+          %p.description
+            ブランド
+          %span.unnecessary
+            任意
+        .product-main__contents__detailsection__input
+          %input{type: "text", name: "name", placeholder: "例）島村", autocomplete: "off", class: "input-item"}
+        .product-main__contents__detailsection__items
+          %p.description
+            商品の状態
+          %span.caution
+            必須
+        .product-main__contents__detailsection__select
+          %select{name: "categoryId"}
+            %option{value: "0"} 選択してください
+      .product-main__contents__shippingsection
+        .product-main__contents__shippingsection__details
+          %p.title 配送について
+          %a.fas.fa-question-circle
+        .product-main__contents__shippingsection__items
+          %p.description
+            配送料の負担
+          %span.caution
+            必須
+        .product-main__contents__shippingsection__select
+          %select{name: "categoryId"}
+            %option{value: "0"} 選択してください
+        .product-main__contents__shippingsection__items
+          %p.description
+            発送元の地域
+          %span.caution
+            必須
+        .product-main__contents__shippingsection__input
+          %select{name: "categoryId"}
+            %option{value: "0"} 選択してください
+        .product-main__contents__shippingsection__items
+          %p.description
+            発送までの日数
+          %span.caution
+            必須
+        .product-main__contents__shippingsection__select
+          %select{name: "categoryId"}
+            %option{value: "0"} 選択してください
+      .product-main__contents__pricesection
+        .product-main__contents__pricesection__details
+          %p.title 価格（¥300〜9,999,999）
+          %a.fas.fa-question-circle
+        .product-main__contents__pricesection__items
+          .product-main__contents__pricesection__items__left
+            %p.description
+              販売価格
+            %span.caution
+              必須
+          .product-main__contents__pricesection__items__right
+            ¥
+            %input{type: "text", name: "name", placeholder: "0", autocomplete: "off", class: "input-price"}
+        .product-main__contents__pricesection__items
+          .product-main__contents__pricesection__items__left
+            %p 販売手数料（10%）
+          .product-main__contents__pricesection__items__right
+            %span ー
+      .product-main__contents__profitsection
+        .product-main__contents__profitsection__items
+          .product-main__contents__profitsection__items__left
+            %p 販売利益
+          .product-main__contents__profitsection__items__right
+            %span ー
+        .product-main__contents__profitsection__submit
+          .product-main__contents__profitsection__submit__upper
+            出品する
+          .product-main__contents__profitsection__submit__bottom
+            下書きに保存
+          .product-main__contents__profitsection__submit__return
+            %a.retur-blue
+              もどる
+          .product-main__contents__profitsection__submit__prohibition
+            禁止されている
+            %a.return-blue 行為
+            及び
+            %a.return-blue 出荷物
+            を必ずご確認ください。
+            %a.return-blue 偽ブランド
+            や
+            %a.return-blue 盗品物
+            などの販売は犯罪であり、法律により処罰される可能性があります。出品を持ちまして
+            %a.return-blue 加盟店規約
+            に同意したことになります。
+            
+        
+
+  .product-footer
+    .product-footer__upper
+      %ul.menu
+        %li.menu__list
+          = link_to "プライバシーポリシー","#", class: "menu__list__policy"
+        %li.menu__list
+          = link_to "Fleamarket利用規約","#", class: "menu__list__policy"
+        %li.menu__list
+          = link_to "特定商取引に関する表記","#", class: "menu__list__policy"
+    .product-footer__bottom
+      = link_to image_tag("logo-white.png", alt: "", class: "product-footer__bottom__monochrome"), "#"
+      %p © Fleamarket, Inc.
+

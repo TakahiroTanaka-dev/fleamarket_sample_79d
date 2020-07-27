@@ -1,8 +1,16 @@
 @import "reset";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "mixin";
+@import "transacts";
+@import "addresses";
+@import "cards";
+@import "items";
+@import "new";
+@import "items/show";
 @import "modules/header";
 @import "modules/footer";
 @import "modules/appbanner";
 @import "modules/appintroduction";
-@import "modules/index"
+@import "modules/index";
+

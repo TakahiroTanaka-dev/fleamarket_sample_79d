@@ -1,3 +1,4 @@
+
 /*!
  * YUI 3.5.0 - reset.css (http://developer.yahoo.com/yui/3/cssreset/)
  * http://cssreset.com
@@ -8,6 +9,7 @@
     TODO will need to remove settings on HTML since we can't namespace it.
     TODO with the prefix, should I group by selector or property for weight savings?
 */
+
 html{
   color:#000;
   background:#FFF;
@@ -18,6 +20,7 @@ html{
 /*
   TODO test putting a class on HEAD.
       - Fails on FF.
+
 */
 body,
 div,
@@ -44,6 +47,7 @@ p,
 blockquote,
 th,
 td {
+
   margin:0;
   padding:0;
 }
@@ -57,6 +61,24 @@ img {
 }
 /*
   TODO think about hanlding inheritence differently, maybe letting IE6 fail a bit...
+
+
+	margin:0;
+	padding:0;
+}
+table {
+	border-collapse:collapse;
+	border-spacing:0;
+}
+fieldset,
+img {
+	border:0;
+}
+/*
+	TODO think about hanlding inheritence differently, maybe letting IE6 fail a bit...
+
+
+
 */
 address,
 caption,
@@ -67,18 +89,32 @@ em,
 strong,
 th,
 var {
-  font-style:normal;
-  font-weight:normal;
+
+
+	font-style:normal;
+	font-weight:normal;
+
+
 }
 
 ol,
 ul {
-  list-style:none;
+
+
+	list-style:none;
+
+
+
 }
 
 caption,
 th {
-  text-align:left;
+
+
+	text-align:left;
+
+
+
 }
 h1,
 h2,
@@ -86,6 +122,7 @@ h3,
 h4,
 h5,
 h6 {
+
   font-size:100%;
   font-weight:normal;
 }
@@ -104,10 +141,12 @@ sup {
 }
 sub {
   vertical-align:text-bottom;
+
 }
 input,
 textarea,
 select {
+
   font-family:inherit;
   font-size:inherit;
   font-weight:inherit;
@@ -116,7 +155,9 @@ select {
 input,
 textarea,
 select {
-  *font-size:100%;
+  
+  *font-size:100%; /*to enable resizing for IE*/
+
 }
 /*because legend doesn't inherit in IE */
 legend {
