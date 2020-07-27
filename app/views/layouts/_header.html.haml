@@ -1,0 +1,27 @@
+.header
+  .top
+    .top__main
+      %h1.top__main__logo
+        = link_to '#', class: "top-logo" do
+          = image_tag 'material/logo/logo.png', size: '140x40'
+      .search-form
+        %form.search-box
+          %input.search-box__text{type: 'text', placeholder: "キーワードから探す"}
+          %button.search-box__btn{type: 'submit'}
+            .search-box__btn__icon
+              = image_tag 'material/icon/icon-search 1.png', size: '19x19'
+    .info
+      %ul.info__left
+        %li.info__left__category
+          = link_to '#', class: "info-category" do
+            カテゴリー
+        %li.info__left__brand
+          = link_to '#', class: "info-brand" do
+            ブランド
+      %ul.info__right
+        %li.info__right__login
+          = link_to '#', class: "user-login" do
+            ログイン
+        %li.info__right__new
+          = link_to '#', class: "user-new" do
+            新規会員登録

@@ -1,0 +1,102 @@
+.main{
+  background: #f8f8f8;
+
+  .pickupcategory{
+    padding: 80px 0 0;
+    background-color: #f8f8f8;
+    height: 100%;
+
+    .pick-head{
+      text-align: center;
+      font-size: 28px;
+      line-height: 1.4;
+      font-weight: bold;
+    }
+
+    .pbox-top{
+      text-align: center;
+
+      .pbox-top-title{
+        font-size: 24px;
+        text-decoration: none;
+        color: #3CCACE;
+
+        .pbox-title{
+          font-weight: bold;
+        }
+      }
+    }
+
+    .pbox-lists{
+      width: 780px;
+      margin: 26px auto;
+      display: flex;
+      justify-content: space-around;
+
+      .pbox-list{
+        width: 220px;
+        display: inline-block;
+        float: left;
+
+        .pbox-list-item{
+          background-color: #fff;
+          display: inline-block;
+          text-decoration: none;
+
+          .pbox-image{
+            width: 220px;
+            height: 150px;
+            position: relative;
+            overflow: hidden;
+            margin: 0;
+            z-index: auto;
+
+            .pbox-img{
+              position: absolute;
+              top: 0;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              width: 100%;
+              z-index: auto;
+              height: 150px;
+              object-fit: cover;
+            }
+          }
+
+          .pbox-text{
+            background-color: white;
+            color: #333;
+            padding: 16px;
+
+            .p-name{
+              overflow: hidden;
+              line-height: 1.5;
+              font-size: 16px;
+              text-align: left;
+            }
+
+            .p-details{
+              font-size: 16px;
+
+              .pbox-data{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+              }
+
+              .pbox-taxin{
+                font-size: 10px;
+                text-align: left;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .pickupcategory:last-child{
+    padding-bottom: 80px;
+  }
+}

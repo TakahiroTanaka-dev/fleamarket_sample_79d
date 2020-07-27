@@ -1,0 +1,49 @@
+.appbanner{
+  background-image: image-url("material/pict/bg-appBanner-pict.jpg");
+  padding: 100px 40px;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  
+  &__inner{
+    color: #fff;
+    text-align: center;
+  }
+
+  &__inner-title{
+    text-shadow: 0 0 5px rgba(0,0,0,0.4);
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 1.4;
+  }
+
+  &__inner-text{
+    font-size: 35px;
+    text-shadow: 0 0 5px rgba(0,0,0,0.4);
+  }
+
+  &__inner-icon{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 20px auto 0;
+
+
+    image{
+      width: 100%;
+      vertical-align: bottom;
+    }
+
+    .app-google-icon{
+      margin-right: 10px;
+
+      .link-abtn{
+        width: 180px;
+      }
+
+      .link-gbtn{
+        width: 180px;
+      }
+    }
+  }
+}
