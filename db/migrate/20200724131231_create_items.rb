@@ -10,7 +10,7 @@ class CreateItems < ActiveRecord::Migration[6.0]
       t.integer :shipping_day, null: false
       t.references :seller, null: false, foreign_key: { to_table: :users }
       t.references :buyer, foreign_key: { to_table: :users }
-      t.string :size
+      t.integer :size
       t.timestamps
     end
   end
