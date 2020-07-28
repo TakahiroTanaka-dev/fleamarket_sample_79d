@@ -1,6 +1,6 @@
 .side_menu
   %ul.side_menu__top
-    = link_to '#' do
+    = link_to user_path do
       %li.selected
         %p マイページ
         %span ＞
@@ -26,7 +26,7 @@
       %li
         %p 発送元・お届け先住所変更
         %span ＞ 
-    = link_to '#' do
+    = link_to cards_path do
       %li
         %p 支払い方法
         %span ＞
@@ -38,7 +38,7 @@
       %li
         %p 本人情報
         %span ＞
-    = link_to '#' do
+    = link_to log_out_user_path do
       %li
         %p ログアウト
         %span ＞
