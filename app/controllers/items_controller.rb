@@ -7,6 +7,8 @@ class ItemsController < ApplicationController
     # ブランドテーブルとのアソシエーションいるなこれ
     @item=Item.new
     @item.images.new
+    @category_parent_array=["---"]
+    @category_parent_array=Category.where(ancestry: nil)
   end
 
   def create
