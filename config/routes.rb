@@ -7,8 +7,11 @@ get 'items/index'
 root 'items#index'
 
 resources :items, only: [:index, :show, :new, :create]
-
-
+resources :users, only: :show do
+  member do
+    get 'log_out'
+  end
+end
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 resources :transacts
