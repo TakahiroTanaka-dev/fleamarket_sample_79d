@@ -44,9 +44,7 @@
             %span.caution
               必須
           .product-main__contents__detailsection__select
-            = f.collection_select :category_id, @category_parent_array, :id, :name, {prompt: '---'}
-            -# %select{name: "categoryId"}
-            -#   %option{value: "0"} 選択してください
+            = f.collection_select :category_id, @category_parent_array, :id, :name, {prompt: '選択してください'}
           .product-main__contents__detailsection__items
             %p.description
               ブランド
@@ -60,8 +58,9 @@
             %span.caution
               必須
           .product-main__contents__detailsection__select
-            %select{name: "categoryId"}
-              %option{value: "0"} 選択してください
+            = f.select :status, Item.statuses.keys,{prompt:"選択してください"}
+            -# %select{name: "categoryId"}
+              -# %option{value: "0"} 選択してください
         .product-main__contents__shippingsection
           .product-main__contents__shippingsection__details
             %p.title 配送について
@@ -72,24 +71,21 @@
             %span.caution
               必須
           .product-main__contents__shippingsection__select
-            %select{name: "categoryId"}
-              %option{value: "0"} 選択してください
+            = f.select :shipping_cost, Item.shipping_costs.keys,{prompt:"選択してください"}
           .product-main__contents__shippingsection__items
             %p.description
               発送元の地域
             %span.caution
               必須
           .product-main__contents__shippingsection__input
-            %select{name: "categoryId"}
-              %option{value: "0"} 選択してください
+            = f.select :prefecture_id, Item.prefecture_ids.keys,{prompt:"選択してください"}
           .product-main__contents__shippingsection__items
             %p.description
               発送までの日数
             %span.caution
               必須
           .product-main__contents__shippingsection__select
-            %select{name: "categoryId"}
-              %option{value: "0"} 選択してください
+            = f.select :shipping_day, Item.shipping_days.keys,{prompt:"選択してください"}
         .product-main__contents__pricesection
           .product-main__contents__pricesection__details
             %p.title 価格（¥300〜9,999,999）
@@ -102,7 +98,8 @@
                 必須
             .product-main__contents__pricesection__items__right
               ¥
-              %input{type: "text", name: "name", placeholder: "0", autocomplete: "off", class: "input-price"}
+              =f.text_field :price, placeholder: "0", class: "input-price"
+              -# %input{type: "text", name: "name", placeholder: "0", autocomplete: "off", class: "input-price"}
           .product-main__contents__pricesection__items
             .product-main__contents__pricesection__items__left
               %p 販売手数料（10%）
@@ -116,7 +113,7 @@
               %span ー
           .product-main__contents__profitsection__submit
             .product-main__contents__profitsection__submit__upper
-              出品する
+              
             .product-main__contents__profitsection__submit__bottom
               下書きに保存
             .product-main__contents__profitsection__submit__return
