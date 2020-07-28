@@ -190,16 +190,17 @@ a{
         // 一番上の赤いボタン
         &__upper{
           margin: 40px 0 0;
+          width: 45%;
           background: #ea352d;
           border: 1px solid #ea352d;
           color: #fff;
           display: block;
-          width: 45%;
           line-height: 48px;
           font-size: 14px;
           transition: all ease-out .3s;
           text-align: center;
           font-weight: bold;
+
         }
         // 2番上のグレーボタン
         &__bottom{
@@ -227,6 +228,21 @@ a{
       }
     }
   }
+}
+
+// 出品と下書きボタン
+.btn-red{
+  line-height: 48px;
+  width: 100%;
+  background: #ea352d;
+  border: 1px solid #ea352d;
+  color: #fff;
+  display: block;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all ease-out .3s;
+  text-align: center;
+  font-weight: bold;
 }
 
 // 青文字のリンク一覧
