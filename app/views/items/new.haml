@@ -13,9 +13,12 @@
           .product-main__contents__imagesection__imagecount
             %p.description
               10枚までアップロード可能です
-          .product-main__contents__imagesection__imagepost
+          %label.product-main__contents__imagesection__imagepost
             %i.fa.fa-camera
             %p ドラッグアンドドロップ<br>またはクリックしてファイルをアップロード
+            
+              
+            
         .product-main__contents__itemsection
           .product-main__contents__itemsection__items
             %p.description
@@ -32,7 +35,6 @@
               必須
           .product-main__contents__itemsection__textarea
             =f.text_area :description, rows: 7, placeholder: "商品の説明（必須1,000文字以内）"
-            -# %textarea{name: "description", rows: 7, placeholder: "商品の説明（必須1,000文字）"}
           .product-main__contents__itemsection__textareacount
             0/1000
         .product-main__contents__detailsection
@@ -58,9 +60,7 @@
             %span.caution
               必須
           .product-main__contents__detailsection__select
-            = f.select :status, Item.statuses.keys,{prompt:"選択してください"}
-            -# %select{name: "categoryId"}
-              -# %option{value: "0"} 選択してください
+            = f.select :condition, Item.conditions.keys,{prompt:"選択してください"}
         .product-main__contents__shippingsection
           .product-main__contents__shippingsection__details
             %p.title 配送について

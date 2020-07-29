@@ -51,24 +51,25 @@ a{
         margin-bottom: 16px;
       }
       &__imagepost{
-        text-align: center;
-        align-content: center;
-        -webkit-box-align: center;
-        align-items: center;
-        background-color: rgb(245, 245, 245);
-        cursor: pointer;
-        display: flex;
-        height: 200px;
-        flex-wrap: wrap;
-        -webkit-box-pack: center;
-        justify-content: center;
-        position: relative;
-        border-width: 1px;
-        border-style: dashed;
-        border-color: rgb(204, 204, 204);
-        border-image: initial;
-        transition: all 0.5s ease-out 0s;
-        position: relative;
+        display: block;
+      text-align: center;
+      align-content: center;
+      -webkit-box-align: center;
+      align-items: center;
+      background-color: rgb(245, 245, 245);
+      cursor: pointer;
+      display: flex;
+      height: 200px;
+      flex-wrap: wrap;
+      -webkit-box-pack: center;
+      justify-content: center;
+      position: relative;
+      border-width: 1px;
+      border-style: dashed;
+      border-color: rgb(204, 204, 204);
+      border-image: initial;
+      transition: all 0.5s ease-out 0s;
+      position: relative;
       }
     }
     &__itemsection{
@@ -229,6 +230,11 @@ a{
     }
   }
 }
+// 画像送信の文字を削除
+
+// input[type="file"]{
+  // display: none;
+// }
 
 // 出品と下書きボタン
 .btn-red{
