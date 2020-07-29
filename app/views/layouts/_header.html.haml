@@ -18,6 +18,12 @@
         %li.info__left__brand
           = link_to '#', class: "info-brand" do
             ブランド
+      - if user_signed_in?
+      %ul.info__right
+        %li.info__right__new
+          = link_to '#', class: "user-new" do
+            マイページ
+      - else
       %ul.info__right
         %li.info__right__login
           = link_to '#', class: "user-login" do
