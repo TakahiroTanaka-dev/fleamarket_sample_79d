@@ -16,7 +16,8 @@
           %label.product-main__contents__imagesection__imagepost
             %i.fa.fa-camera
             %p ドラッグアンドドロップ<br>またはクリックしてファイルをアップロード
-            
+            = f.fields_for :images do |image|
+              = image.file_field :image, class:"btn-image"
               
             
         .product-main__contents__itemsection

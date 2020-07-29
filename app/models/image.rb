@@ -2,5 +2,5 @@ class Image < ApplicationRecord
   belongs_to :item
 
   # carrierwave
-  mount_uploaders :images, ImageUploader
+  mount_uploader :image, ImageUploader
 end
