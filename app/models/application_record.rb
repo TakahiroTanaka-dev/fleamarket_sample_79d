@@ -4,5 +4,4 @@ class ApplicationRecord < ActiveRecord::Base
   VALID_NAME_REGEX = /\A[ぁ-んァ-ン一-龥]/
   VALID_KANA_REGEX = /\A([ァ-ン]|ー)+\z/
   VALID_POSTAL_REGEX = /\A\d{7}\z/
-  VALID_PHONE_REGEX = /\A\d{10}\z|^\d{11}\z/
 end
