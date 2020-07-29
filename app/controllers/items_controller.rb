@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
   def index
+    @items=Item.all
   end
-
 
   def new
     
@@ -16,3 +16,4 @@ class ItemsController < ApplicationController
   end
 
 end
+
