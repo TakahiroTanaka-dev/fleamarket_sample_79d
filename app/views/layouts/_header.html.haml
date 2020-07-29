@@ -19,15 +19,15 @@
           = link_to '#', class: "info-brand" do
             ブランド
       - if user_signed_in?
-      %ul.info__right
-        %li.info__right__new
-          = link_to '#', class: "user-new" do
-            マイページ
+        %ul.info__right
+          %li.info__right__new
+            = link_to user_path(current_user), class: "user-new" do
+              マイページ
       - else
-      %ul.info__right
-        %li.info__right__login
-          = link_to '#', class: "user-login" do
-            ログイン
-        %li.info__right__new
-          = link_to '#', class: "user-new" do
-            新規会員登録
+        %ul.info__right
+          %li.info__right__login
+            = link_to user_session_path, class: "user-login" do
+              ログイン
+          %li.info__right__new
+            = link_to new_user_registration_path, class: "user-new" do
+              新規会員登録

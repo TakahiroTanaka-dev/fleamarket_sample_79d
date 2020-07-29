@@ -1,7 +1,7 @@
 class Address < ApplicationRecord
   belongs_to :user, optional: true
 
-  validates :postal_code, presence: true, format: { with: VALID_POSTAL_REGEX, message: '半角数字のみで入力してください'}
+  validates :postal_code, presence: true
   validates :prefecture_id, presence: true
   validates :city, :block, presence: true
   validates :family_name, :first_name, presence: true, format: { with: VALID_NAME_REGEX , message: "全角のみ使えます" }

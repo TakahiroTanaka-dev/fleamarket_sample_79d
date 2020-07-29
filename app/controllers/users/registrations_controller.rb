@@ -35,12 +35,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
     @user.save
     session["devise.regist_data"]["user"].clear
     sign_in(:user, @user)
-    # redirect_to root_path
+    redirect_to root_path
   end
 
   protected
 
   def address_params
-    params.require(:address).permit(:family_name, :first_name, :family_name_kana, :first_name_kana, :postal_code, :prefecuture_id, :city, :block, :building, :phone_number)
+    params.require(:address).permit(:family_name, :first_name, :family_name_kana, :first_name_kana, :postal_code, :prefecture_id, :city, :block, :building, :phone_number)
   end
 end
