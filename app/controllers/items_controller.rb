@@ -8,7 +8,6 @@ class ItemsController < ApplicationController
       @item=Item.new
       @item.images.new
       @category_parent_array=Category.where(ancestry: nil)
-    end
   end
 
   def create
