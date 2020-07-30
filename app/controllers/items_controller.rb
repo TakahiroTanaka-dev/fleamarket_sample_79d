@@ -5,12 +5,9 @@ class ItemsController < ApplicationController
 
   def new
     # ブランドテーブルとのアソシエーションいるなこれ
-    if user_signed_in?
       @item=Item.new
       @item.images.new
       @category_parent_array=Category.where(ancestry: nil)
-    else
-      redirect_to root_path
     end
   end
 
