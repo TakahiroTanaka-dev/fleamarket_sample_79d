@@ -1,0 +1,23 @@
+.logout_button {
+  display: block;
+  margin: 50px auto;
+  text-align: center;
+  text-decoration: none;
+  line-height: 48px;
+  background: #3CCACE;
+  border: 1px solid #3CCACE;
+  color: #fff;
+  width: 60%;
+  font-size: 18px;
+  cursor: pointer;
+
+  &:hover {
+    background: #39C0C5;
+    border: 1px solid #33A9AD;
+  }
+  
+  &:active {
+    background: #33A9AD;
+    border: 1px solid #39C0C5;
+  }
+}
