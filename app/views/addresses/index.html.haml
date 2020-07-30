@@ -5,10 +5,10 @@
   .AddressForm__contents
     = form_with model: @address, local: true do |f|
       .AddressForm__content
-        %h3.AddressForm__content__name 
+        %h3.AddressForm__content__name
           お名前 
           %span.AddressForm__content__require 必須
-        .AddressName__family_name 
+        .AddressName__family_name
           = f.text_field :family_name, placeholder: "例）山田", class: "AddressInput"
         .AddressName__first_name
           = f.text_field :first_name, placeholder: "例）彩", class: "AddressInput"
