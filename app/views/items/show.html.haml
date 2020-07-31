@@ -59,8 +59,12 @@
       %ul.item__showBox__optionalArea
         %li.item__showBox__optionalArea--likeBtn
           = link_to 'お気に入り 0', '#' 
+          = link_to 'お気に入り 0', '#'  
         %li.item__showBox__optionalArea--optionalBtn
           = link_to '不適切な商品の通報', '#'
+      %ul.item__showBox__optionalArea
+        %li.item__showBox__optionalArea--delete
+          = link_to 'この商品をを削除する', '#' 
     .item__show__commentBox
       %textarea.item__show__commentBox--textarea
       .item__show__commentBox--attention
