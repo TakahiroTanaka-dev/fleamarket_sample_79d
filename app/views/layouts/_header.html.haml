@@ -3,13 +3,13 @@
     .top__main
       %h1.top__main__logo
         = link_to root_path, class: "top-logo" do
-          = image_tag 'logo.png', size: '140x40'
+          = image_tag 'logo.png', class: "logoimage"
       .search-form
         %form.search-box
           %input.search-box__text{type: 'text', placeholder: "キーワードから探す"}
           %button.search-box__btn{type: 'submit'}
             .search-box__btn__icon
-              = image_tag 'icon-search 1.png', size: '19x19'
+              = image_tag 'icon-search 1.png', class: "searchicon"
     .info
       %ul.info__left
         %li.info__left__category
