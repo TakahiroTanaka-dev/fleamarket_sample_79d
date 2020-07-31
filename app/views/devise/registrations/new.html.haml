@@ -1,0 +1,75 @@
+%nav.sign-header__content__progress
+  %ol
+    %li.sign-header__content__progress__text__active{ id: "first" }
+      会員情報
+      .sign-header__content__progress__round__active
+    %li.sign-header__content__progress__text
+      送付先住所入力
+      .sign-header__content__progress__round__passive
+    %li.sign-header__content__progress__text{ id: "end" }
+      登録完了
+      .sign-header__content__progress__round__passive
+
+.input
+  %h1.input__name
+    会員情報入力
+  .input__group
+    = form_for(@user, url: user_registration_path) do |f|
+      = render "devise/shared/error_messages", resource: resource
+      .input__group__content
+        %label.input__group__content__label
+          ニックネーム
+        %span.input__group__content__required
+          必須
+        %br
+        = f.text_field :nickname, {placeholder: "例）フリマ太郎",class:'input__group__content__box'}
+
+      .input__group__content
+        %label.input__group__content__label
+          メールアドレス
+        %span.input__group__content__required
+          必須
+        %br
+        = f.email_field :email, {autofocus: true, autocomplete: "email", placeholder: "例）hurima@hurima.com",class:'input__group__content__box'}
+
+      .input__group__content
+        %label.input__group__content__label
+          パスワード
+        %span.input__group__content__required
+          必須
+        %br
+        = f.password_field :password,{autocomplete: "new-password",placeholder: "7文字以上の半角英数字",class:'input__group__content__box',id:"password"}
+
+        .input__group__content
+        %label.input__group__content__label
+          パスワード
+        %span.input__group__content__check
+          確認
+        %br
+        = f.password_field :password_confirmation,{autocomplete: "new-password",placeholder: "7文字以上の半角英数字",class:'input__group__content__box',id:"password"}
+
+      .input__group__content
+        %label.input__group__content__label
+          お名前（全角）
+        %span.input__group__content__required
+          必須
+        %br
+        = f.text_field :family_name, {placeholder:"例）田中",class:'input__group__content__name-left'}
+        = f.text_field :first_name, {placeholder:"例）太郎",class:'input__group__content__name-rigth'}
+      .input__group__content
+        %label.input__group__content__label
+          お名前（カナ）
+        %span.input__group__content__required
+          必須
+        %br
+        = f.text_field :family_name_kana, {placeholder:"例）タナカ",class:'input__group__content__name-left'}
+        = f.text_field :first_name_kana, {placeholder:"例）タロウ",class:'input__group__content__name-rigth'}
+      .input__group__content
+        %label.input__group__content__label
+          生年月日
+        %span.input__group__content__required
+          必須
+        %br
+        = f.date_field :birth_day, {class: "input__group__content__box"}
+      .input__group__content__btn
+        = f.submit '次に進む', class: "input__group__content__btn__tag"

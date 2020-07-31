@@ -1,3 +1,97 @@
-// Place all the styles related to the users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+.AddressForm {
+  background-color: #f0f0f0;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: #333;
+  &__title {
+    width: 40%;
+    background-color: #fff;
+    height: 40px;
+    text-align: center; 
+    line-height: 40px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 2px;
+  }
+  &__contents {
+    width: 40%;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 100px;
+    padding-bottom: 50px;
+  }
+  &__content {
+    margin-top: 25px; 
+    font-size: 13px;
+    &__name {
+      font-weight: bold;
+    }
+    &__require {
+      background-color: red;
+      color: white;
+      display: inline-block;
+      height: 20px;
+      width: 32px;
+      line-height: 20px;
+      text-align: center;
+      border-radius: 2px; 
+      margin-left: 5px;
+    }
+  }
+}
+
+.AddressName__family_name {
+  margin-top: 5px;
+}
+
+.AddressName__first_name {
+  margin-top: 5px;
+}
+
+.AddressName__family_name_kana {
+  margin-top: 5px;
+}
+
+.AddressName__first_name_kana {
+  margin-top: 5px;
+}
+
+.AddressPostal_code {
+  margin-top: 5px;
+}
+
+.AddressPrefecture {
+  margin-top: 5px;
+}
+
+.AddressCity {
+  margin-top: 5px;
+}
+
+.AddressBlock {
+  margin-top: 5px;
+}
+
+.AddressBuilding {
+  margin-top: 5px;
+}
+
+.AddressTell {
+  margin-top: 5px;
+}
+
+.AddressInput {
+  height: 40px;
+  width: 280px;
+  padding-left: 10px;
+}
+
+.AddressSelect {
+  height: 43px;
+  width: 295px;
+  padding: 0 10px;
+}

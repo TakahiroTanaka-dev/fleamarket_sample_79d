@@ -1,0 +1,69 @@
+-# %nav.sign-header__content__progress
+-#   %ol
+-#     %li.sign-header__content__progress__text__active{ id: "first" }
+-#       会員情報
+-#     -#   .sign-header__content__progress__round__active
+-#     -# %li.sign-header__content__progress__text
+-#     -#   送付先住所入力
+-#     -#   .sign-header__content__progress__round__passive
+-#     -# %li.sign-header__content__progress__text{ id: "end" }
+-#     -#   登録完了
+-#     -#   .sign-header__content__progress__round__passive
+
+.AddressForm
+  = image_tag src="logo.png", class: "TsurutaIcon"
+  .AddressForm__title
+    会員登録
+  .AddressForm__contents
+    =form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+      .AddressForm__content
+        %h3.AddressForm__content__nickname 
+          ニックネーム
+          %span.AddressForm__content__require 必須
+        .Addressname_nickname
+          = f.text_field :nickname, placeholder: "例）アヤヤ", class: "AddressInput"
+      .AddressForm__content
+        %h3.AddressForm__content__name
+          お名前 
+          %span.AddressForm__content__require 必須
+        .AddressName__family_name
+          = f.text_field :family_name, placeholder: "例）山田", class: "AddressInput"
+        .AddressName__first_name
+          = f.text_field :first_name, placeholder: "例）彩", class: "AddressInput"
+      .AddressForm__content
+        %h3.AddressForm__content__name 
+          お名前カナ
+          %span.AddressForm__content__require 必須
+        .AddressName__family_name_kana
+          = f.text_field :family_name_kana, placeholder: "例）ヤマダ", class: "AddressInput"
+        .AddressName__first_name_kana
+          = f.text_field :first_name_kana, placeholder: "例）アヤ", class: "AddressInput"
+      .AddressForm__content
+        %h3.AddressForm__content__name 
+          メールアドレス
+          %span.AddressForm__content__require 必須
+        .AddressPostal_code
+          = f.text_field :email, placeholder: "例）road@gmail.com", class: "AddressInput"
+      .AddressForm__content
+        %h3.AddressForm__content__name 
+          パスワード
+          %span.AddressForm__content__require 必須
+        .AddressPrefecture
+          = f.text_field :password, placeholder: "例）123456", class: "AddressInput"
+      .AddressForm__content
+        %h3.AddressForm__content__name 
+          生年月日
+          %span.AddressForm__content__require 必須
+        .Addressbirthday
+          = f.text_field :birth_day, placeholder: "例）2000年１月１日", class: "AddressInput"
+      .AddressForm__content
+        = f.submit "登録する", class: "TsurutaSubmit"
+  .TsurutaTerms
+    = link_to "#", class: "TsurutaTerm" do
+      プライバシーポリシー
+    = link_to "#", class: "TsurutaTerm" do
+      利用規約
+    = link_to "#", class: "TsurutaTerm" do
+      特定商取引に関する表記  
+= image_tag src="logo-white.png", class: "TsurutaIcon2"    
+      
