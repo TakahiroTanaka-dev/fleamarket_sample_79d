@@ -75,3 +75,8 @@ gem 'haml-rails'
 gem 'devise'
 gem 'ancestry'
 
+# Carrierwave
+gem 'carrierwave'
+gem 'mini_magick'
+# S3
+gem 'fog-aws'
