@@ -25,6 +25,10 @@
         .item__showBox__price--detail
           (税込)
           送料込み
+      .item__showBox__purchase
+        .item__showBox__purchase--main
+          = link_to 'この商品を購入する', '#' 
+
       .item__showBox__detail
         親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から首を出していたら、同級生の一人が冗談に、いくら威張っても、そこから飛び降りる事は出来まい。弱虫やーい。と囃したからである。小使に負ぶさって帰って来た時、おやじが大きな眼をして二階ぐらいから飛び降りて腰
       %table.item__showBox__table
@@ -65,6 +69,7 @@
       %ul.item__showBox__optionalArea
         %li.item__showBox__optionalArea--delete
           = link_to 'この商品をを削除する', '#' 
+          = link_to 'この商品を削除する', '#',method: :delete, class: "btn", style: "margin-top:10px;background: gray;border: 1px solid gray;color: #fff;"
     .item__show__commentBox
       %textarea.item__show__commentBox--textarea
       .item__show__commentBox--attention
