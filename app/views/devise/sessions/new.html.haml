@@ -14,4 +14,13 @@
         = f.password_field :password, placeholder: 'パスワード', class: 'Login__main__center__form-pass'
         = f.submit "ログイン", class: 'Login__main__center__form-btn'
     .Login__main__right
-  .Login__button
+  .Login__footer
+.AddressForm
+  .TsurutaTerms
+    = link_to "#", class: "TsurutaTerm" do
+      プライバシーポリシー
+    = link_to "#", class: "TsurutaTerm" do
+      利用規約
+    = link_to "#", class: "TsurutaTerm" do
+      特定商取引に関する表記  
+  = image_tag src="logo-white.png", class: "TsurutaIcon2"    
