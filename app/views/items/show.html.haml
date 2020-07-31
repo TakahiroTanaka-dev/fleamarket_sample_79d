@@ -1,4 +1,4 @@
--# = render 'layouts/header'
+= render 'layouts/header'
 .item__show
   .item__show__wrapper
     .item__showBox
@@ -70,9 +70,9 @@
       %button.item__show__commentBox--submit{type: "submit"}
         コメントする
     %ul.pagination
-      %li.fa.fa-angle-left
+      %li
         = link_to '前の商品', '#', class: 'fa-angle'
-      %li.fa.fa-angle-right
+      %li
         = link_to '後ろの商品', '#', class: 'fa-angle'
     .item__show__relatedItems
       = link_to 'ベビー・キッズをもっと見る', '#', class: 'item__show__relatedItems'
@@ -95,4 +95,4 @@
           .item__show__related__list--details
             %ul
               %li 1000円
--# = render 'layouts/footer'
+= render 'layouts/footer'

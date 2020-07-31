@@ -1,0 +1,39 @@
+- items.each do |item|
+  -if item.buyer_id.present? 
+    .pbox-list
+      = link_to item_path(item.id), class: "pbox-list-item" do
+        .pbox-content
+          .pbox-image
+            = image_tag item.images.first.image, class: "pbox-img"
+          .items-box_photo__sold
+            .items-box_photo__sold__inner
+              SOLD
+          .pbox-text
+            .p-name
+              = item.name
+            .p-details
+              %ul.pbox-data
+                %li
+                  = "#{item.price}円"
+                %li
+                  = icon('fas', 'star', class: 'likeicon')
+                  0
+              %p.pbox-taxin
+                (税込)
+  -else
+    .pbox-list
+      = link_to item_path(item.id), class: "pbox-list-item" do
+        .pbox-image
+          = image_tag item.images.first.image, class: "pbox-img"
+        .pbox-text
+          .p-name
+            = item.name
+          .p-details
+            %ul.pbox-data
+              %li
+                = "#{item.price}円"
+              %li
+                = icon('fas', 'star', class: 'likeicon')
+                0
+            %p.pbox-taxin
+              (税込)

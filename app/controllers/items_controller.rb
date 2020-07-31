@@ -1,7 +1,8 @@
 class ItemsController < ApplicationController
   def index
+    @categoryitems = Item.all.order("RAND()")
+    @branditems = Item.all.order("id DESC")
   end
-
 
   def new
     # ブランドテーブルとのアソシエーションいるなこれ
@@ -27,3 +28,4 @@ class ItemsController < ApplicationController
   end
 
 end
+
