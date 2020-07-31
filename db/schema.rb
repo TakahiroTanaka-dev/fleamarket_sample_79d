@@ -14,6 +14,8 @@ ActiveRecord::Schema.define(version: 2020_07_26_055918) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
+    t.string "family_name", null: false
+    t.string "first_name", null: false
     t.string "postal_code", null: false
     t.integer "prefecture_id", null: false
     t.string "city", null: false
@@ -68,9 +70,7 @@ ActiveRecord::Schema.define(version: 2020_07_26_055918) do
     t.string "family_name_kana", null: false
     t.string "first_name_kana", null: false
     t.string "nickname", null: false
-    t.string "birth_year", null: false
-    t.string "birth_month", null: false
-    t.string "birth_date", null: false
+    t.string "birth_day", null: false
     t.string "icon"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
