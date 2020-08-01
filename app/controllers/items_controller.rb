@@ -1,5 +1,4 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:show]
 
   def index
     @categoryitems = Item.all.order("RAND()")
@@ -15,7 +14,6 @@ class ItemsController < ApplicationController
     else
       redirect_to new_user_session_path
     end
-
   end
 
   def create
@@ -25,15 +23,12 @@ class ItemsController < ApplicationController
 
 
   def show
+    @item = Item.find(params[:id])
   end
 
   private
   def item_params
     params.require(:item).permit(:name, :description, :condition, :category_id, :shipping_cost, :condition, :price, :shipping_id, :prefecture_id, :shipping_day, images_attributes:[:image]).merge(seller_id: current_user.id)
-  end
-  
-  def set_item
-    @item = Item.find(params[:id])
   end
 end
 
