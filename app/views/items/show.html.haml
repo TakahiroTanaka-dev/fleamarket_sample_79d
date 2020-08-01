@@ -1,9 +1,10 @@
-= render 'layouts/header'
+-# = render 'layouts/header'
+
 .item__show
   .item__show__wrapper
     .item__showBox
       .item__showBox__name
-        アイテム１
+        = @item.name
       .item__showBox__body
         %ul
           %li
@@ -21,17 +22,19 @@
                 = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/15/a003.png", class: "show__image__sub"
       .item__showBox__price
         .item__showBox__price--main
-          ￥30000
+          = "¥#{@item.price}"
         .item__showBox__price--detail
           (税込)
-          送料込み
+          = @item.shipping_cost
       .item__showBox__detail
-        親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から首を出していたら、同級生の一人が冗談に、いくら威張っても、そこから飛び降りる事は出来まい。弱虫やーい。と囃したからである。小使に負ぶさって帰って来た時、おやじが大きな眼をして二階ぐらいから飛び降りて腰
+        = @item.description
       %table.item__showBox__table
         %tbody
           %tr
             %th 出品者
-            %td hoge
+            %td
+              
+              = @item.user.nickname
           %tr
             %th カテゴリー
             %td
@@ -45,17 +48,20 @@
             %td
           %tr
             %th 商品の状態
-            %td 未使用に近い
+            %td
+              = @item.condition
           %tr
             %th 配送料の負担
-            %td 送料込み（出品者負担）
+            %td
+              = @item.shipping_cost
           %tr
             %th 配送元の地域
             %td
               = link_to '岩手県', '#', class: 'dataLink'
           %tr
             %th 発送日の目安
-            %td 4-7日で発送
+            %td
+              = @item.shipping_day
       %ul.item__showBox__optionalArea
         %li.item__showBox__optionalArea--likeBtn
           = link_to 'お気に入り 0', '#' 
@@ -95,4 +101,4 @@
           .item__show__related__list--details
             %ul
               %li 1000円
-= render 'layouts/footer'
+-# = render 'layouts/footer'
