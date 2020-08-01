@@ -51,6 +51,7 @@ a{
         margin-bottom: 16px;
       }
       &__imagepost{
+        display: block;
         text-align: center;
         align-content: center;
         -webkit-box-align: center;
@@ -187,19 +188,20 @@ a{
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        // 一番上の赤いボタン
+        // 一番上のボタン
         &__upper{
           margin: 40px 0 0;
-          background: #ea352d;
-          border: 1px solid #ea352d;
+          width: 45%;
+          background: #3ccace;
+          border: 1px solid #3ccace;
           color: #fff;
           display: block;
-          width: 45%;
           line-height: 48px;
           font-size: 14px;
           transition: all ease-out .3s;
           text-align: center;
           font-weight: bold;
+
         }
         // 2番上のグレーボタン
         &__bottom{
@@ -227,6 +229,26 @@ a{
       }
     }
   }
+}
+// 画像送信の文字を削除
+
+input[type="file"]{
+  display: none;
+}
+
+// 出品と下書きボタン
+.btn-red{
+  line-height: 48px;
+  width: 100%;
+  background: #3ccace;
+  border: 1px solid #3ccace;
+  color: #fff;
+  display: block;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all ease-out .3s;
+  text-align: center;
+  font-weight: bold;
 }
 
 // 青文字のリンク一覧

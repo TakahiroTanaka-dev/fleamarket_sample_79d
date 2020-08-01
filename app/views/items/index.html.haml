@@ -13,38 +13,8 @@
           %h2.pbox-title
             新規投稿商品
       .pbox-lists
-        .pbox-list
-          = link_to '#', class: "pbox-list-item" do
-            .pbox-image
-              = image_tag 'IMG_9072.jpeg', class: "pbox-img"
-            .pbox-text
-              .p-name
-                ee
-              .p-details
-                %ul.pbox-data
-                  %li
-                    1000円
-                  %li
-                    = icon('fas', 'star', class: 'likeicon')
-                    0
-                %p.pbox-taxin
-                  (税込)
-        .pbox-list
-          = link_to '#', class: "pbox-list-item" do
-            .pbox-image
-              = image_tag 'a007.png', class: "pbox-img"
-            .pbox-text
-              .p-name
-                product3
-              .p-details
-                %ul.pbox-data
-                  %li
-                    30000円
-                  %li
-                    = icon('fas', 'star', class: 'likeicon')
-                    1
-                %p.pbox-taxin
-                  (税込)
+        = render "items/categoryitem", items: @categoryitems
+
   .pickupcategory
     %h2.pick-head
       ピックアップブランド
@@ -54,38 +24,8 @@
           %h2.pbox-top
             アーカイバ
       .pbox-lists
-        .pbox-list
-          = link_to '#', class: "pbox-list-item" do
-            .pbox-image
-              = image_tag 'IMG_9072.jpeg', class: "pbox-img"
-            .pbox-text
-              .p-name
-                ee
-              .p-details
-                %ul.pbox-data
-                  %li
-                    1000円
-                  %li
-                    = icon('fas', 'star', class: 'likeicon')
-                    0
-                %p.pbox-taxin
-                  (税込)
-        .pbox-list
-          = link_to '#',class: "pbox-list-item" do
-            .pbox-image
-              = image_tag 'a007.png', class: "pbox-img"
-            .pbox-text
-              .p-name
-                product3
-              .p-details
-                %ul.pbox-data
-                  %li
-                    30000円
-                  %li
-                    = icon('fas', 'star', class: 'likeicon')
-                    1
-                %p.pbox-taxin
-                  (税込)
+        = render "items/branditem", items: @branditems
+
 
 =render "layouts/appbanner"
 =render "layouts/footer"
