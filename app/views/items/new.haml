@@ -13,11 +13,12 @@
           .product-main__contents__imagesection__imagecount
             %p.description
               10枚までアップロード可能です
-          %label.product-main__contents__imagesection__imagepost
+          #image-box-1   
+          %label.product-main__contents__imagesection__imagepost#image-box__container
             %i.fa.fa-camera
             %p ドラッグアンドドロップ<br>またはクリックしてファイルをアップロード
             = f.fields_for :images do |image|
-              = image.file_field :image, class:"btn-image"
+              = image.file_field :image, class:"btn-image", id: "img-file",type: 'file', name: "item[images_attributes][][image_url]", value:""
               
             
         .product-main__contents__itemsection
