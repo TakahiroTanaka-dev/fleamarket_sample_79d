@@ -1,0 +1,23 @@
+= render 'layouts/header'
+
+.mypage
+  = render "side_menu"
+  .main_contents
+    .user_header
+      .user_header__info
+        = image_tag asset_path("member_photo_noimage_thumb.png")
+        %p 名前
+        %p 出品数 0
+    .item_window
+      %h3 購入した商品
+      .item_window__list
+        .item
+          = image_tag asset_path("pict-reason-02.jpg")
+          %p 商品Aを購入しました。
+        .item
+          = image_tag asset_path("pict-reason-02.jpg")
+          %p 商品Bを購入しました。
+        .item
+          = link_to "一覧を見る", "#", class: "index_btn"
+
+= render 'layouts/footer'

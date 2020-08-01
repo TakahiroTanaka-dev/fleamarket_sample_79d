@@ -1,20 +1,21 @@
 .AddressForm
-  = image_tag src="logo.png", class: "TsurutaIcon"
+  = link_to image_tag(src="logo.png", class: "TsurutaIcon"), root_path
   .AddressForm__title
     発送元・お届け先住所入力
   .AddressForm__contents
-    = form_with model: @address, local: true do |f|
+    = form_with model: @address, url: addresses_path do |f|
+      = render "devise/shared/error_messages", resource: resource
       .AddressForm__content
-        %h3.AddressForm__content__name 
-          お名前 
+        %h3.AddressForm__content__name
+          送付先氏名 
           %span.AddressForm__content__require 必須
-        .AddressName__family_name 
+        .AddressName__family_name
           = f.text_field :family_name, placeholder: "例）山田", class: "AddressInput"
         .AddressName__first_name
           = f.text_field :first_name, placeholder: "例）彩", class: "AddressInput"
       .AddressForm__content
         %h3.AddressForm__content__name 
-          お名前カナ
+          送付先氏名（カナ）
           %span.AddressForm__content__require 必須
         .AddressName__family_name_kana
           = f.text_field :family_name_kana, placeholder: "例）ヤマダ", class: "AddressInput"
@@ -31,7 +32,7 @@
           都道府県
           %span.AddressForm__content__require 必須
         .AddressPrefecture
-          = f.select :prefecture, [["", ""], ["北海道", 1], ["青森県", 2], ["岩手県", 3], ["宮城県", 4], ["秋田県", 5], ["山形県", 6], ["福島県", 7], ["茨城県", 8], ["栃木県", 9], ["群馬県", 10], ["埼玉県", 11], ["千葉県", 12], ["東京都", 13], ["神奈川県", 14], ["新潟県", 15], ["富山県", 16], ["石川県", 17], ["福井県", 18], ["山梨県", 19], ["長野県", 20], ["岐阜県", 21], ["静岡県", 22], ["愛知県", 23], ["三重県", 24], ["滋賀県", 25], ["京都府", 26], ["大阪府", 27], ["兵庫県", 28], ["奈良県", 29], ["和歌山県", 30], ["鳥取県", 31], ["島根県", 32], ["岡山県", 33], ["広島県", 34], ["山口県", 35], ["徳島県", 36], ["香川県", 37], ["愛媛県", 38], ["高知県", 39], ["福岡県", 40], ["佐賀県", 41], ["長崎県", 42], ["熊本県", 43], ["大分県", 44], ["宮城県", 45], ["鹿児島県", 46], ["沖縄県", 47]], {}, class: "AddressSelect"
+          = f.select :prefecture_id, Address.prefecture_ids.keys
       .AddressForm__content
         %h3.AddressForm__content__name 
           市区町村
@@ -51,7 +52,7 @@
       .AddressForm__content
         %h3.AddressForm__content__name 電話
         .AddressTell
-          = f.text_field :tell, placeholder: "例）09012345678", class: 'AddressInput'
+          = f.text_field :phone_number, placeholder: "例）09012345678", class: 'AddressInput'
       .AddressForm__content
         = f.submit "登録する", class: "TsurutaSubmit"
   .TsurutaTerms
