@@ -21,7 +21,7 @@
           登録してください
       .TransactAddress
         %h5 配送先
-        = link_to new_address_path, class: "AddressLink" do
+        = link_to "#", class: "AddressLink" do
           登録してください
       .TransactButtom
         = form_with model: @purchased, local: true do |f|
