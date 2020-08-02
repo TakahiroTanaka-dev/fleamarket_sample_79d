@@ -175,3 +175,22 @@
     margin-right: 20px;
   }
 }
+
+.item__edit-btns{
+  display: flex;
+  margin-top: 10px;
+  
+
+  .edit-btn-a{
+    background-color: orange;
+    border: 1px solid black;
+    padding: 6px 10px;
+    margin-right: 10px;
+  }
+
+  .delete-btn-a{
+    background-color: orangered;
+    border: 1px solid black;
+    padding: 6px 10px;
+  }
+}
