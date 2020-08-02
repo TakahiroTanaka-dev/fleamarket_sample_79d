@@ -3,7 +3,7 @@
   .CardForm__title
     支払い方法
   .CardForm__contents
-    = form_with method: :post, id: 'charge-form', name: "inputForm" do |f|
+    = form_with url: pay_cards_path, html: {id: 'charge-form', name: "inputForm"}, method: :post  do |f|
       .CardForm__content
         %h3.CardForm__content__name
           カード番号
@@ -32,8 +32,11 @@
           %span.AddressForm__content__require 必須
         .CardCVC
           = f.text_field :cvc, placeholder: "カード背面4桁もしくは3桁の番号", class: "CardInput", maxlength: "4", id: "cvc"
+      
+      #card_token
+    
       .CardForm__content
-        = f.submit "登録する", id: "token_submit", class: "TsurutaSubmit", id: "card_token"
+        = f.submit "登録する", class: "TsurutaSubmit", id: "token_submit"
   .TsurutaTerms
     = link_to "#", class: "TsurutaTerm" do
       プライバシーポリシー
