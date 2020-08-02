@@ -1,0 +1,27 @@
+.CardForm
+  = image_tag src="logo.png", class: "TsurutaIcon" 
+  .CardForm__title
+    クレジットカード情報
+  .CardForm__contents
+    .CardForm__content
+      カード番号
+      .CardNumbar
+        = "**** **** **** " + @default_card_information.last4
+    - exp_month = @default_card_information.exp_month.to_s
+    - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+    .CardForm__content
+      有効期限
+      .CardExpiration
+      = exp_month + " / " + exp_year
+    .CardForm__content
+      = form_tag(card_path(current_user.id), method: :delete, id: 'charge-form',  name: "inputForm") do
+        %input{ type: "hidden", name: "card_id", value: "" }
+        %button.TsurutaSubmit 削除する
+  .TsurutaTerms
+    = link_to "#", class: "TsurutaTerm" do
+      プライバシーポリシー
+    = link_to "#", class: "TsurutaTerm" do
+      利用規約
+    = link_to "#", class: "TsurutaTerm" do
+      特定商取引に関する表記
+  = image_tag src="logo-white.png", class: "TsurutaIcon2"
