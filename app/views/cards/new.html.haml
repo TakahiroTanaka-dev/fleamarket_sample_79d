@@ -31,10 +31,8 @@
           セキリュティコード
           %span.AddressForm__content__require 必須
         .CardCVC
-          = f.text_field :cvc, placeholder: "カード背面4桁もしくは3桁の番号", class: "CardInput", maxlength: "4", id: "cvc"
-      
+          = f.text_field :cvc, placeholder: "カード背面4桁もしくは3桁の番号", class: "CardInput", maxlength: "4", id: "cvc"    
       #card_token
-    
       .CardForm__content
         = f.submit "登録する", class: "TsurutaSubmit", id: "token_submit"
   .TsurutaTerms
