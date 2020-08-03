@@ -28,15 +28,15 @@
           %tr
             %th カテゴリー
             %td
-              = link_to '#', class: 'dataLink' do
-                = @item.category.name
               -# 出品で孫まで選べれるようになったら使う
+              -# = link_to '#', class: 'dataLink' do
+              -#   = @item.category.parent.parent.name
               -# %br
               -# = link_to '#', class: 'dataLink' do
               -#   = @item.category.parent.name
               -# %br
-              -# = link_to '#', class: 'dataLink' do
-              -#   = @item.category.parent.parent.name
+              = link_to '#', class: 'dataLink' do
+                = @item.category.name
           %tr
             %th ブランド
             %td
