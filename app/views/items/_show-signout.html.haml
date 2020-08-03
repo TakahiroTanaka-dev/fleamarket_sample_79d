@@ -28,11 +28,15 @@
           %tr
             %th カテゴリー
             %td
-              = link_to 'ベビー・キッズ', '#', class: 'dataLink'
-              %br
-              = link_to 'ベビー服(男女兼用) ~95cm', '#', class: 'dataLink'
-              %br
-              = link_to 'アウター', '#', class: 'dataLink'
+              = link_to '#', class: 'dataLink' do
+                = @item.category.name
+              -# 出品で孫まで選べれるようになったら使う
+              -# %br
+              -# = link_to '#', class: 'dataLink' do
+              -#   = @item.category.parent.name
+              -# %br
+              -# = link_to '#', class: 'dataLink' do
+              -#   = @item.category.parent.parent.name
           %tr
             %th ブランド
             %td
@@ -47,7 +51,8 @@
           %tr
             %th 配送元の地域
             %td
-              = link_to '岩手県', '#', class: 'dataLink'
+              = link_to '#', class: 'dataLink' do
+                = @item.prefecture_id
           %tr
             %th 発送日の目安
             %td
