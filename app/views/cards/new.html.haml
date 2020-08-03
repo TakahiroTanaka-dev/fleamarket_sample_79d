@@ -3,13 +3,13 @@
   .CardForm__title
     支払い方法
   .CardForm__contents
-    = form_with model: @cards, local: true do |f|
+    = form_with url: pay_cards_path, html: {id: 'charge-form', name: "inputForm"}, method: :post  do |f|
       .CardForm__content
         %h3.CardForm__content__name
           カード番号
           %span.AddressForm__content__require 必須
         .CardNumbar
-          = f.text_field :card_number, placeholder: "半角数字のみ", class: "CardInput"
+          = f.text_field :number, placeholder: "半角数字のみ", class: "CardInput", maxlength: "16", type: "text", id: "card_number" 
       .CardForm__content
         = image_tag src="img_visa.svg", class: "CardImage"
         = image_tag src="img_master.svg", class: "CardImage"
@@ -22,18 +22,19 @@
           有効期限
           %span.AddressForm__content__require 必須
         .CardExpire
-          = f.select :expire_month, [["01", 1], ["02", 2], ["03", 3], ["04", 4], ["05", 5], ["06", 6], ["07", 7], ["08", 8], ["09", 9], ["10", 10], ["11", 11], ["12", 12]], {}, class: "SelectMonth"
+          = f.select :exp_month, [["01", 1], ["02", 2], ["03", 3], ["04", 4], ["05", 5], ["06", 6], ["07", 7], ["08", 8], ["09", 9], ["10", 10], ["11", 11], ["12", 12]], {}, class: "SelectMonth", id: "exp_month", type: "text"
           %span 月
-          = f.select :expire_year, [["20", 2020], ["21", 2021], ["22", 2022], ["23", 2023], ["24", 2024]], {}, class: "SelectYear"
+          = f.select :exp_year, [["20", 2020], ["21", 2021], ["22", 2022], ["23", 2023], ["24", 2024]], {}, class: "SelectYear", id: "exp_year", type: "text"
           %span 年
       .CardForm__content
         %h3.CardForm__content__name
           セキリュティコード
           %span.AddressForm__content__require 必須
         .CardCVC
-          = f.text_field :cvc, placeholder: "カード背面4桁もしくは3桁の番号", class: "CardInput"
+          = f.text_field :cvc, placeholder: "カード背面4桁もしくは3桁の番号", class: "CardInput", maxlength: "4", id: "cvc"    
+      #card_token
       .CardForm__content
-        = f.submit "登録する", class: "TsurutaSubmit"
+        = f.submit "登録する", class: "TsurutaSubmit", id: "token_submit"
   .TsurutaTerms
     = link_to "#", class: "TsurutaTerm" do
       プライバシーポリシー

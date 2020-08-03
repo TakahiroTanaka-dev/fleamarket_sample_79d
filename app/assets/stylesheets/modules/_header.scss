@@ -14,14 +14,21 @@
       align-items: center;
 
       &__logo{
-        padding-bottom: 10px;
+        padding-bottom: 5px;
         margin-right: 30px;
+        margin-bottom: 10px;
         border-radius: 4px;
+      }
+      
+      .logoimage {
+        width: 140px;
+        display: block;
       }
 
       .search-form{
         margin-left: auto;
         width: 100%;
+        margin-bottom: 10px;
 
         .search-box{
           width: 100%;
@@ -30,16 +37,19 @@
 
           &__text{
             width: calc(100% - 26px);
-            height: 36px;
+            height: 38px;
             padding: 0 0 0 5px;
           }
 
           &__btn{
-            width: 36px;
+            width: 35px;
             border: 0;
             cursor: pointer;
             background-color: #3CCACE;
-            padding: 8px;
+            padding: 7px;
+          }
+          .searchicon{
+            width: 100%;
           }
         }
       }
@@ -48,7 +58,7 @@
     .info{
       font-size: 14px;
       display: flex;
-      margin-bottom: 10px;
+      padding-bottom: 10px;
 
       &__left{
         position: relative;

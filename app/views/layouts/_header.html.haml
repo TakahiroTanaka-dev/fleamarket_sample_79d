@@ -3,13 +3,13 @@
     .top__main
       %h1.top__main__logo
         = link_to root_path, class: "top-logo" do
-          = image_tag 'logo.png', size: '140x40'
+          = image_tag 'logo.png', class: "logoimage"
       .search-form
         %form.search-box
           %input.search-box__text{type: 'text', placeholder: "キーワードから探す"}
           %button.search-box__btn{type: 'submit'}
             .search-box__btn__icon
-              = image_tag 'icon-search 1.png', size: '19x19'
+              = image_tag 'icon-search 1.png', class: "searchicon"
     .info
       %ul.info__left
         %li.info__left__category
@@ -18,10 +18,16 @@
         %li.info__left__brand
           = link_to '#', class: "info-brand" do
             ブランド
-      %ul.info__right
-        %li.info__right__login
-          = link_to '#', class: "user-login" do
-            ログイン
-        %li.info__right__new
-          = link_to '#', class: "user-new" do
-            新規会員登録
+      - if user_signed_in?
+        %ul.info__right
+          %li.info__right__new
+            = link_to user_path(current_user), class: "user-new" do
+              マイページ
+      - else
+        %ul.info__right
+          %li.info__right__login
+            = link_to user_session_path, class: "user-login" do
+              ログイン
+          %li.info__right__new
+            = link_to new_user_registration_path, class: "user-new" do
+              新規会員登録

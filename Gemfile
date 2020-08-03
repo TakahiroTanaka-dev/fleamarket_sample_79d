@@ -39,6 +39,8 @@ group :development, :test do
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
   gem 'capistrano-rails-console'
+  gem 'rspec-rails', '~> 4.0.0.beta2'
+  gem 'factory_bot_rails'
 end
 
 group :development do
@@ -72,4 +74,14 @@ gem 'font-awesome-sass'
 gem 'haml-rails'
 gem 'devise'
 gem 'ancestry'
+
+gem 'payjp'
+gem 'jquery-rails'
+
+
+# Carrierwave
+gem 'carrierwave'
+gem 'mini_magick'
+# S3
+gem 'fog-aws'
 
