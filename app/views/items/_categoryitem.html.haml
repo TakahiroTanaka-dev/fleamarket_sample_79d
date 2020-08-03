@@ -24,7 +24,7 @@
     .pbox-list
       = link_to item_path(item.id), class: "pbox-list-item" do
         .pbox-image
-          = image_tag item.images.fist.image.url, class: "pbox-img"
+          = image_tag item.images.first.image.url, class: "pbox-img"
         .pbox-text
           .p-name
             = item.name
