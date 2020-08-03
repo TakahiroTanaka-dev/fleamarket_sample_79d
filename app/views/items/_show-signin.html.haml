@@ -68,7 +68,7 @@
             = link_to '#', class: "edit-btn-a" do
               編集
           %li.delete-btn
-            = link_to '#', class: "delete-btn-a", method: :delete do
+            = link_to item_path(@item.id), class: "delete-btn-a", method: :delete do
               削除
       - else
         .item__buy-btn
