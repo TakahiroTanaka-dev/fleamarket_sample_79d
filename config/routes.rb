@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   # after
   root 'items#index'
 
-  resources :items, only: [:index, :show, :new, :create]
+  resources :items, only: [:index, :show, :new, :creategit,:destroy]
   resources :users, only: :show do
     member do
       get 'log_out'
