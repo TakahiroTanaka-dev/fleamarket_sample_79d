@@ -12,7 +12,8 @@ Rails.application.routes.draw do
   # after
   root 'items#index'
 
-  resources :items, only: [:index, :show, :new, :create] do
+
+  resources :items, only: [:index, :show, :new, :create, :destroy] do
     resources :transacts, only: [:index] do
       collection do
         get 'done', to: 'transacts#done'

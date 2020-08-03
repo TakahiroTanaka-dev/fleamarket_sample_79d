@@ -1,4 +1,5 @@
 class Item < ApplicationRecord
+  
   enum condition: {"新品・未使用": 1, "未使用に近い": 2,"目立った傷や汚れなし":3,"やや傷や汚れあり":4,"傷や汚れあり":5,"全体的に状態が悪い":6}
   enum shipping_cost: {"送料込み（出品者負担)":1, "着払い（購入者負担）":2, "着払い（購入者負担）":3}
   enum shipping_day: {"1~2日で発送":1,  "2〜3日で発送":2,"4〜7日で発送":3}
@@ -12,7 +13,6 @@ class Item < ApplicationRecord
     "徳島県":36,"香川県":37,"愛媛県":38,"高知県":39,
     "福岡県":40,"佐賀県":41,"長崎県":42,"熊本県":43,"大分県":44,"宮崎県":45,"鹿児島県":46,"沖縄県":47
   }
-
 
   belongs_to :buyer, class_name: 'User', :foreign_key => 'buyer_id', optional: true
   belongs_to :seller, class_name: 'User', :foreign_key => 'seller_id'
