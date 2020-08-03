@@ -4,12 +4,6 @@ class ItemsController < ApplicationController
     @branditems = Item.all.order("id DESC")
   end
   
-  def destroy
-    item = Item.find(params[:id])
-    item.destroy
-    redirect_to root_path
-  end
-  
   def new
     
   end
@@ -20,6 +14,12 @@ class ItemsController < ApplicationController
 
 
   def show
+  end
+
+  def destroy
+    item = Item.find(params[:id])
+    item.destroy
+    redirect_to root_path
   end
 
 end
