@@ -6,7 +6,7 @@ get 'items/index'
 # after
 root 'items#index'
 
-resources :items, only: [:index, :show, :new, :create]
+resources :items, only: [:index, :show, :new, :create, :destroy]
 resources :users, only: :show do
   member do
     get 'log_out'
