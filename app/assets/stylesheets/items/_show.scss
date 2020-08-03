@@ -178,20 +178,48 @@
 
 .item__edit-btns{
   display: flex;
-  margin-top: 10px;
   justify-content: flex-end;
+  margin-top: 20px;
   
 
   .edit-btn-a{
     background-color: orange;
-    border: 1px solid black;
-    padding: 6px 10px;
+    border: 1px solid orange;
+    color: white;
+    padding: 10px 50px;
     margin-right: 10px;
+    border-radius: 40px;
+    font-size: 18px;
   }
 
   .delete-btn-a{
     background-color: orangered;
-    border: 1px solid black;
-    padding: 6px 10px;
+    border: 1px solid orangered;
+    color: white;
+    padding: 10px 50px;
+    border-radius: 40px;
+    font-size: 18px;
   }
+}
+
+.item__buy-btn{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  
+  
+  
+  .buy-btn-a{
+    background-color: orangered;
+    border: 1px solid orangered;
+    color: white;
+    font-size: 18px;
+    border-radius: 100px;
+    padding: 10px;
+    margin: auto;
+    height: 50px;
+    width: 60%;
+  }
+
+
 }

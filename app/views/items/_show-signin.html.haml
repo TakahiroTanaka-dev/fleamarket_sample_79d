@@ -47,7 +47,7 @@
           %tr
             %th 配送元の地域
             %td
-              = link_to '岩手県', '#', class: 'dataLink'
+              = @item.prefecture_id
           %tr
             %th 発送日の目安
             %td
@@ -57,7 +57,7 @@
           = link_to 'お気に入り 0', '#' 
         %li.item__showBox__optionalArea--optionalBtn
           = link_to '不適切な商品の通報', '#'
-      - if user_signed_in? && @item.seller_id
+      - if user_signed_in? && @item.seller.id == current_user.id
         %ul.item__edit-btns
           %li.edit-btn
             = link_to '#', class: "edit-btn-a" do
@@ -65,9 +65,9 @@
           %li.delete-btn
             = link_to '#', class: "delete-btn-a", method: :delete do
               削除
-      - elsif user_signed_in?
+      - else
         .item__buy-btn
-          = link_to '#' do
+          = link_to '#', class: "buy-btn-a" do
             購入画面に進む
     .item__show__commentBox
       %textarea.item__show__commentBox--textarea
