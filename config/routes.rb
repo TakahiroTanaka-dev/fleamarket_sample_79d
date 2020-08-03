@@ -12,7 +12,15 @@ Rails.application.routes.draw do
   # after
   root 'items#index'
 
-  resources :items, only: [:index, :show, :new, :create]
+  resources :items, only: [:index, :show, :new, :create] do
+    resources :transacts, only: [:index] do
+      collection do
+        get 'done', to: 'transacts#done'
+        post 'pay', to: 'transacts#pay'
+      end
+    end
+  end
+
   resources :users, only: :show do
     member do
       get 'log_out'
