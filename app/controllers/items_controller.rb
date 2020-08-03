@@ -22,7 +22,7 @@ class ItemsController < ApplicationController
       if item.destroy
         redirect_to root_path, notice: "削除が完了しました"
       else
-        redirect_to root_path, alert: "削除が失敗しました"
+        redirect_to :show, alert: "削除が失敗しました"
       end
     end
   end

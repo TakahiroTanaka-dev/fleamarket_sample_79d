@@ -48,4 +48,4 @@
   .exhibition-btn
     %span.exhibition-btn__text
       出品する
-    = image_tag 'icon_camera.png', class: "exhibition-btn__icon", size: "54x54"
+    = link_to image_tag( 'icon_camera.png', class: "exhibition-btn__icon", size: "54x54"), new_item_path

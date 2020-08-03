@@ -1,0 +1,98 @@
+$back_ground_color: rgb(240, 240, 240);
+
+.Login {
+  background: $back_ground_color;
+  margin-top: 0;
+  &__top {
+    height: 128px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &-icon{
+      width: 210px;
+    }
+  }
+  &__main {
+    display: flex;
+    &__left {
+      width: 35%; 
+      min-width: 0;
+    }
+    &__center {
+      background-color: #fff;
+      max-width: none;
+      width: 500px;
+      padding-top: 40px;
+      padding-bottom: 40px;
+      &__signup {
+        border-bottom: solid 1px $back_ground_color;
+        padding-bottom: 50px;
+        &-text {
+          text-align: center;
+        }
+        &-btn {
+          text-align: center;
+          display: block;
+          text-decoration: none;
+          border-radius: 4px;
+          border: solid 1px #3CCACE;
+          background-color: #3CCACE;
+          color: #fff;
+          line-height: 40px;
+          width: 300px;
+          height: 50px;
+          line-height: 50px;
+          margin: 0 auto;
+        }
+      }
+      &__form {
+        &-email {
+          display: block;
+          border: solid 1px rgb(170, 170, 170);
+          border-radius: 4px;
+          width: 80%;
+          margin: 0 auto;
+          margin-top: 50px;
+          height: 50px;
+          padding-left: 10px;
+        }
+        &-pass {
+          display: block;
+          border: solid 1px rgb(170, 170, 170);
+          border-radius: 4px;
+          width: 80%;
+          margin: 0 auto;
+          margin-top: 24px;
+          height: 50px;
+          padding-left: 10px;
+        }
+        &-btn {
+          text-align: center;
+          display: block;
+          text-decoration: none;
+          border-radius: 4px;
+          border: solid 1px #3CCACE;
+          background-color: #3CCACE;
+          color: #fff;
+          line-height: 40px;
+          width: 300px;
+          height: 50px;
+          line-height: 50px;
+          margin: 0 auto;
+          margin-top: 30px;
+        }
+      }
+    }
+    &__right {
+      width: 35%;
+      min-width: 0;
+    }
+  }
+  &__footer {
+    height: 50px;
+  }
+}
+
+.field_with_errors {
+  display: contents;
+}
