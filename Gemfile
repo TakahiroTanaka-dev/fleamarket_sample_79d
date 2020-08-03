@@ -75,8 +75,13 @@ gem 'haml-rails'
 gem 'devise'
 gem 'ancestry'
 
+gem 'payjp'
+gem 'jquery-rails'
+
+
 # Carrierwave
 gem 'carrierwave'
 gem 'mini_magick'
 # S3
 gem 'fog-aws'
+
