@@ -6,26 +6,37 @@
         購入内容の確認
       .TransactItem
         .TransactItem__image
-          = image_tag src="呂布カルマ.jpg", class: "TransactItem-image"
+          = image_tag @item.images.first.image.url, class: "TransactItem-image"
         .TransactItem__info
           .TransactItem__name
-            呂布カルマ
+            = @item.name
           .TransactItem__price
-            送料込み（税込）￥4,200
+            = "#{@item.price}円"
       .TransactAmount
         %h3 支払い金額
-        %p ￥4,200
+        %p 
+          = "¥#{@item.price}円"
       .TransactMethod
-        %h5 支払い方法
+        %h3 支払い方法
         = link_to new_card_path, class: "MethodLink" do
           登録してください
       .TransactAddress
-        %h5 配送先
+        %h3 配送先
+        = current_user.address.postal_code
+        %br
+        = current_user.address.prefecture_id
+        %br
+        = current_user.address.city
+        %br
+        = current_user.address.block
+        %br
+        = current_user.address.building
+        %br
         = link_to "#", class: "AddressLink" do
-          登録してください
+          配送先の変更
       .TransactButtom
         = form_tag(action: :pay, method: :post) do
-          %button.buy-button{type:"submit"} 購入する
+          %button.TsurutaSubmit{type:"submit"} 購入する
   .TsurutaTerms
     = link_to "#", class: "TsurutaTerm" do
       プライバシーポリシー
