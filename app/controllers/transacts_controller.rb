@@ -19,11 +19,12 @@ class TransactsController < ApplicationController
       customer: @card.customer_id,
       currency: 'jpy'
     )
+    @item.update(buyer_id: current_user.id)
     redirect_to done_item_transacts_path
   end
 
   def done
-
+    @item = Item.find(params[:item_id])
   end
   
   def set_card
@@ -33,5 +34,6 @@ class TransactsController < ApplicationController
   def set_item
     @item = Item.find(params[:item_id])
   end
+
 
 end

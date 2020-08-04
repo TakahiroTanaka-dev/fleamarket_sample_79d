@@ -12,9 +12,8 @@ Rails.application.routes.draw do
   # after
   root 'items#index'
 
-
   resources :items, only: [:index, :show, :new, :create, :destroy] do
-    resources :transacts, only: [:index] do
+    resources :transacts, only: [:index, :set_item] do
       collection do
         get 'done', to: 'transacts#done'
         post 'pay', to: 'transacts#pay'
