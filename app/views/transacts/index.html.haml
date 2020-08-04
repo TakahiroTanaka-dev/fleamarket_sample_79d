@@ -24,8 +24,8 @@
         = link_to "#", class: "AddressLink" do
           登録してください
       .TransactButtom
-        = form_with model: @purchased, local: true do |f|
-          = f.submit '購入する', class: 'TsurutaSubmit'
+        = form_tag(action: :pay, method: :post) do
+          %button.buy-button{type:"submit"} 購入する
   .TsurutaTerms
     = link_to "#", class: "TsurutaTerm" do
       プライバシーポリシー
