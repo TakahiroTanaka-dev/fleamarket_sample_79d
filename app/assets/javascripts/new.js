@@ -59,3 +59,7 @@ $(document).on('turbolinks:load', ()=> {
     $(`img[data-index="${targetIndex}"]`).remove();
   })
 });
+
+
+// ここからはカテゴリーの子要素と孫要素を追加するよ！！
+

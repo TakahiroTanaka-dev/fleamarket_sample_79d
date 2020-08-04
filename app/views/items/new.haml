@@ -51,7 +51,7 @@
             %span.caution
               必須
           .product-main__contents__detailsection__select
-            = f.collection_select :category_id, @category_parent_array, :id, :name, {prompt: '選択してください'}
+            = f.collection_select :category_id, @category_parent_array, :id "parent-form", :name, {prompt: '選択してください'}
           .product-main__contents__detailsection__items
             %p.description
               ブランド
