@@ -2,6 +2,7 @@ ja:
   activerecord:
     models:
       user: ユーザー
+      address: アドレス
     attributes:
       user:
         nickname: ニックネーム
@@ -14,9 +15,6 @@ ja:
         month_birth_at: 誕生月
         day_birth_at: 誕生日
         birth_day: 誕生日
-    models:
-      address: アドレス
-    attributes:
       address:
         postal_code: 郵便番号
         prefecture_id: 都道府県

@@ -3,7 +3,7 @@
   .AddressForm__title
     発送元・お届け先住所入力
   .AddressForm__contents
-    = form_with model: @address, url: addresses_path do |f|
+    = form_with model: @address, url: addresses_path, local: true do |f|
       = render "devise/shared/error_messages", resource: resource
       .AddressForm__content
         %h3.AddressForm__content__name
