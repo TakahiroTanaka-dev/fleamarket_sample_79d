@@ -28,6 +28,8 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
+    @commentALL = @item.comments
   end
 
   def destroy
