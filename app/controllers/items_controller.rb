@@ -1,4 +1,6 @@
 class ItemsController < ApplicationController
+  before_action :authenticate_user, only: :destroy
+  before_action :set_item, only: [:show, :destroy]
 
   def index
     @categoryitems = Item.all.order("RAND()")
@@ -18,25 +20,36 @@ class ItemsController < ApplicationController
 
   def create
     @item=Item.create(item_params)
-    redirect_to root_path
+    if @item.save
+      redirect_to root_path, notice: "出品が完了しました"
+    else
+      redirect_to new_item_path, alert: "必須項目を入力して下さい"
+    end
   end
 
-
   def show
-    @item = Item.find(params[:id])
   end
 
   def destroy
-    item = Item.find(params[:id])
-    if item.user_id == current_user.id && item.destroy
+    if @item.destroy
       redirect_to root_path, notice: "削除が完了しました"
     else
-      redirect_to :show, alert: "削除が失敗しました"
+      redirect_to :show, alert: "削除できませんでした"
     end
   end
 
   private
   def item_params
     params.require(:item).permit(:name, :description, :condition, :category_id, :shipping_cost, :condition, :price, :shipping_id, :prefecture_id, :shipping_day, images_attributes:[:image]).merge(seller_id: current_user.id)
+  end
+
+  def set_item
+    @item = Item.find(params[:id])
+  end
+
+  def authenticate_user
+    if Item.find(params[:id]).seller != current_user
+      redirect_to root_path
+    end
   end
 end
