@@ -84,4 +84,3 @@ gem 'carrierwave'
 gem 'mini_magick'
 # S3
 gem 'fog-aws'
-

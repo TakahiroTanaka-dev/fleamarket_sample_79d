@@ -73,9 +73,15 @@
             = link_to item_path(@item.id), class: "delete-btn-a", method: :delete do
               削除
       - elsif user_signed_in?
-        .item__buy-btn
-          = link_to "#", class: "buy-btn-a" do
-            購入画面に進む
+        - if @item.buyer_id.nil?
+          .item__buy-btn
+            = link_to item_transacts_path(@item.id), class: "buy-btn-a" do
+              購入画面に進む
+        - else 
+          .item__buy-btn
+            = link_to "#", class: "buy-btn-a" do
+              SOLD OUT
+
     - if user_signed_in?
       .commentBox
         .comment-list
@@ -153,3 +159,4 @@
               %li 1000円
 
 = render 'layouts/footer'
+

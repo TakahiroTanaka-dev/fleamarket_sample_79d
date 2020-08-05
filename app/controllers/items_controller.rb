@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  before_action :move_to_root_path, except:[:index, :show], unless: :user_signed_in?
   before_action :authenticate_user, only: :destroy
   before_action :set_item, only: [:show, :destroy]
 
@@ -32,6 +33,27 @@ class ItemsController < ApplicationController
     @commentALL = @item.comments
   end
 
+
+  def get_category_children
+    respond_to do |format|
+      format.html
+      format.json do
+        @children = Category.find(params[:parent_id]).children
+      end
+    end
+  end
+
+  # 子カテゴリーが選択された後に動くアクション
+  def get_category_grandchildren
+    respond_to do |format|
+      format.html
+      format.json do
+        @grandchildren = Category.find(params[:child_id]).children
+      end
+    end
+  end
+
+
   def destroy
     if @item.destroy
       redirect_to root_path, notice: "削除が完了しました"
@@ -40,9 +62,14 @@ class ItemsController < ApplicationController
     end
   end
 
+
   private
   def item_params
-    params.require(:item).permit(:name, :description, :condition, :category_id, :shipping_cost, :condition, :price, :shipping_id, :prefecture_id, :shipping_day, images_attributes:[:image]).merge(seller_id: current_user.id)
+    params.require(:item).permit(:name, :description, :condition, :category_id, :shipping_cost, :condition, :price, :shipping_id, :prefecture_id, :shipping_day, images_attributes:[:image, :id, :_destroy]).merge(seller_id: current_user.id)
+  end
+
+  def move_to_root_path
+    redirect_to root_path
   end
 
   def set_item
