@@ -1,6 +1,6 @@
 class TransactsController < ApplicationController
 
-  before_action :set_card, :set_item
+  before_action :set_card, :set_item, only: [:index, :pay]
 
   def index  
     if @card.blank?
@@ -26,14 +26,16 @@ class TransactsController < ApplicationController
   def done
     @item = Item.find(params[:item_id])
   end
-  
+
   def set_card
     @card = Card.find_by(user_id: current_user.id)
   end
 
   def set_item
     @item = Item.find(params[:item_id])
+    unless @item.buyer_id.nil?
+      redirect_to root_path
+    end
   end
-
 
 end
