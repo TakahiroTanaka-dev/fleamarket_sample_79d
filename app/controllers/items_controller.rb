@@ -32,11 +32,15 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    
+
   end
 
   def update
-    
+    if @item.update(update_params)
+      redirect_to item_path
+    else
+      render edit_item_path
+    end
   end
 
 
@@ -75,7 +79,7 @@ class ItemsController < ApplicationController
   end
 
   def update_params
-
+    params.require(:item).permit(:name, :description, :condition, :category_id, :shipping_cost, :condition, :price, :shipping_id, :prefecture_id, :shipping_day, images_attributes:[:image, :id, :_destroy])
   end
 
   def move_to_root_path
