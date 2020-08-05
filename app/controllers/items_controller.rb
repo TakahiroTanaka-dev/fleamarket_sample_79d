@@ -31,6 +31,14 @@ class ItemsController < ApplicationController
   def show
   end
 
+  def edit
+    
+  end
+
+  def update
+    
+  end
+
 
   def get_category_children
     respond_to do |format|
@@ -64,6 +72,10 @@ class ItemsController < ApplicationController
   private
   def item_params
     params.require(:item).permit(:name, :description, :condition, :category_id, :shipping_cost, :condition, :price, :shipping_id, :prefecture_id, :shipping_day, images_attributes:[:image, :id, :_destroy]).merge(seller_id: current_user.id)
+  end
+
+  def update_params
+
   end
 
   def move_to_root_path
