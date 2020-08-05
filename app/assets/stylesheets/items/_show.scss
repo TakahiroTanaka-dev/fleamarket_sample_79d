@@ -132,7 +132,6 @@
       .comment-content{
         text-align: left;
         position: relative;
-        // display: inline-block;
         margin: 20px 20px 20px 0px;
         padding: 7px 10px;
         width: 70%;
@@ -141,6 +140,7 @@
         background:pink;
         min-height: 80px;
         word-wrap: break-word;
+        border-radius: 10px;
       }
       .comment_create_at{
         position: absolute;
@@ -212,6 +212,7 @@
         background: #e0edff;
         min-height: 80px;
         word-wrap: break-word;
+        border-radius: 10px;
         .comment_create_at{
           position: absolute;
           bottom: 0;
