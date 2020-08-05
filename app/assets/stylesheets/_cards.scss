@@ -51,6 +51,7 @@
 
 .CardExpire {
   margin-top: 5px;
+  font-size: 20px;
 }
 
 .CardCVC {
@@ -80,4 +81,23 @@
 .CardImage {
   height: 30px;
   width: 45px;
+}
+
+.CardSubmit {
+  display: flex;
+  &__button {
+    background-color: #3CCACE;
+    width: 100px;
+    height: 50px;
+    font-weight: bold;
+    color: #fff;
+    font-size: 15px;
+    border-radius: 5px;
+    border-style: none;
+    line-height: 50px;
+    text-align: center;
+    &--left {
+      margin-right: 30px;
+    }
+  }
 }
