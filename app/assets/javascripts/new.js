@@ -27,7 +27,6 @@ $(document).on('turbolinks:load', ()=> {
   
   // input:last.trigger("click")
   $('#image-box').on('click', function(){
-    console.log('ff')
     $('.js-file:last').trigger('click')
   })
 
@@ -50,7 +49,6 @@ $(document).on('turbolinks:load', ()=> {
   });
   $(document).on('click', '.js-remove', function(){
     const targetIndex = $(this).parent().data('index');
-    console.log(targetIndex);
     // 該当indexを振られているチェックボックスを取得する
     const hiddenCheck = $(`input[data-index="${targetIndex}"].hidden-destroy`);
     // もしチェックボックスが存在すればチェックを入れる
@@ -95,7 +93,6 @@ $(function(){
 
   $('#parent-form').on('change', function(){
     const parentValue = document.getElementById("parent-form").value;
-    console
     if (parentValue != ""){
       $.ajax({
         url: '/items/get_category_children',
@@ -107,7 +104,6 @@ $(function(){
       })
 
       .done(function(children){
-        console.log(children);
         $('#child_form').remove();
         $('#grandchild_form').remove();
         let insertHTML = '';
