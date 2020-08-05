@@ -3,8 +3,8 @@
   .AddressForm__title
     会員登録
   .AddressForm__contents
+    = render "devise/shared/error_messages", resource: resource
     = form_with model: @user, url: user_registration_path, local: true do |f|
-      = render "devise/shared/error_messages", resource: resource
       .AddressForm__content
         %h3.AddressForm__content__nickname 
           ニックネーム
