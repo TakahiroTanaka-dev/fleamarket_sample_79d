@@ -1,0 +1,20 @@
+= render 'layouts/header'
+.mypage
+  = render "side_menu"
+  .main_contents
+    .user_header
+      .user_header__info
+        = image_tag asset_path("member_photo_noimage_thumb.png")
+        %p 名前
+        %p 出品数 0
+    .item_window  
+      %h3 購入した商品
+      .item_window__list
+        - @item.each do |item|
+          .item
+            = image_tag item.images.first.image.url
+            %p
+              = item.name
+= render 'layouts/footer'   
+
+    
