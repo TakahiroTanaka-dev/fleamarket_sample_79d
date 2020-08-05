@@ -73,6 +73,7 @@ $(function(){
     let childSelectHTML = '';
     childSelectHTML = `
       <select class="select--wrap-cat1__default-category1" id="child_form" name="category_id" style="margin-top: 10px">
+        <option value="---" data-category="---">選択してください</option>
         ${insertHTML}
       </select>
     
