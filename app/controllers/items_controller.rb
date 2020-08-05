@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  before_action :move_to_root_path, except:[:index, :show], unless: :user_signed_in?
   before_action :authenticate_user, only: :destroy
   before_action :set_item, only: [:show, :destroy]
 
@@ -41,6 +42,10 @@ class ItemsController < ApplicationController
   private
   def item_params
     params.require(:item).permit(:name, :description, :condition, :category_id, :shipping_cost, :condition, :price, :shipping_id, :prefecture_id, :shipping_day, images_attributes:[:image]).merge(seller_id: current_user.id)
+  end
+
+  def move_to_root_path
+    redirect_to root_path
   end
 
   def set_item

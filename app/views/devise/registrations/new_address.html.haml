@@ -3,8 +3,13 @@
   .AddressForm__title
     発送元・お届け先住所入力
   .AddressForm__contents
-    = form_with model: @address, url: addresses_path do |f|
-      = render "devise/shared/error_messages", resource: resource
+    = form_with model: @address, url: addresses_path, local: true do |f|
+      - if @address.errors.any?
+        .SettingGroupForm__errors
+          %h2= "#{@address.errors.full_messages.count}件のエラーが発生しました。"
+          %ul
+            - @address.errors.full_messages.each do |message|
+              %li= message
       .AddressForm__content
         %h3.AddressForm__content__name
           送付先氏名 
