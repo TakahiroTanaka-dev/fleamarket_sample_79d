@@ -11,7 +11,7 @@ $(document).on('turbolinks:load', ()=> {
   const buildImg = (index, url)=> {
     const html = `
     <div class="js-file_group" data-index="${index}">
-    <img src="${url}" width="100px" height="100px" class="js-file">
+      <img src="${url}" width="100px" height="100px" class="js-file">
     <div class="js-remove">削除</div>
     </div>`;
     return html;
@@ -62,4 +62,96 @@ $(document).on('turbolinks:load', ()=> {
 
 
 // ここからはカテゴリーの子要素と孫要素を追加するよ！！
+$(function(){
+
+  function appendOption(category) {
+    const html = `<option value="${category.name}" data-category="${category.id}">${category.name}</option>`;
+    return html;
+  }
+
+  function appendChildrenBox(insertHTML){
+    let childSelectHTML = '';
+    childSelectHTML = `
+      <select class="select--wrap-cat1__default-category1" id="child_form" name="category_id" style="margin-top: 10px">
+        ${insertHTML}
+      </select>
+    
+    `
+    $('.product-main__contents__detailsection__select').append(childSelectHTML);
+  }
+
+  function appendGrandchildrenBox(insertHTML) {
+    let grandchildSelectHtml = '';
+    grandchildSelectHtml = `
+    <select class="select--wrap-cat1__default-category1" id="grandchild_form" name="category_id" style="margin-top: 10px">
+      <option value="---" data-category="---">---</option>
+        ${insertHTML}
+    </select>`; 
+  
+  
+    $('.product-main__contents__detailsection__select').append(grandchildSelectHtml);
+  }
+
+  $('#parent-form').on('change', function(){
+    const parentValue = document.getElementById("parent-form").value;
+    console
+    if (parentValue != ""){
+      $.ajax({
+        url: '/items/get_category_children',
+        type: "GET",
+        data: {
+          parent_id: parentValue
+        },
+        dataType: 'json'
+      })
+
+      .done(function(children){
+        console.log(children);
+        $('#child_form').remove();
+        $('#grandchild_form').remove();
+        let insertHTML = '';
+        children.forEach(function(child){
+          insertHTML += appendOption(child);
+        });
+        appendChildrenBox(insertHTML);
+      })
+
+      .fail(function(){
+        alert('カテゴリを入力してください')
+      })
+    }
+    else {
+      $('#child_form').remove();
+      $('#grandchild_form').remove();
+    }
+  })
+  // 孫要素のアクション
+  $(".product-main__contents__detailsection__select").on("change", "#child_form", function() {
+    var childValue = $('#child_form option:selected').data('category');
+    if (childValue != "") {
+      $('#grandchild_form').remove();
+      $.ajax({
+        url     : '/items/get_category_grandchildren',
+        type    : 'GET',
+        data    : {
+          child_id: childValue
+        },
+        dataType: 'json'
+      })
+
+      .done(function(grandchildren) {
+        let insertHTML = '';
+        grandchildren.forEach(function(grandchild){
+          insertHTML += appendOption(grandchild);
+        });
+        appendGrandchildrenBox(insertHTML);
+      })
+      .fail(function() {
+        alert('カテゴリーを入力して下さい');
+      })
+    } else {
+      $('#grandchild_form').remove();
+    }
+  });
+});
 
