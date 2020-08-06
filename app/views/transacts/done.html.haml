@@ -1,5 +1,41 @@
-.DoneItem
-  購入が完了しました
-  .DoneSubmit
-    = link_to "/" do
-      トップページへ戻る
+.purchase-verification
+  .purchase-verification__header
+    %h2.purchase-title
+      購入完了
+    .done-message
+      %p 発送をお待ちください
+      %p 出品者からの発送通知をお待ち下さい
+    .top-images
+      = image_tag @item.images[0].image.url
+    .contents
+      %h2.title
+        商品名
+      %h3.detail
+        = @item.name
+    .contents
+      %h2.title
+        送料込み
+      %h3.detail
+        = "¥#{@item.price}"
+    .buyer-contents
+      %h2.purchase-title
+        配送先
+      .contents
+        %h2.title
+          住所
+          %h3="〒#{current_user.address.postal_code} #{current_user.address.prefecture_id} #{current_user.address.city} #{current_user.address.block} #{current_user.address.building}"
+      .contents
+        %h2.title
+          名前
+        %h3="#{current_user.family_name} #{current_user.first_name} "
+      .contents
+        %h2.title
+          支払方法
+          %h3
+            = "**** **** **** " + @default_card_information.last4
+          %h3
+            - exp_month = @default_card_information.exp_month.to_s
+            - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+            = exp_month + " / " + exp_year
+      .return-top
+        =link_to 'TOPページへ戻る',root_path, class:"return_btn"
