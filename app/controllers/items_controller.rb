@@ -20,10 +20,14 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @item=Item.create(item_params)
-    if @item.save
-      redirect_to root_path, notice: "出品が完了しました"
-    else
+    begin
+      @item=Item.create(item_params)
+      if @item.save
+        redirect_to root_path, notice: "出品が完了しました"
+      else
+        redirect_to new_item_path, alert: "必須項目を入力して下さい"
+      end
+    rescue 
       redirect_to new_item_path, alert: "必須項目を入力して下さい"
     end
   end
