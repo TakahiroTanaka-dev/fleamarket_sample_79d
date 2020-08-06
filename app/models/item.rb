@@ -20,5 +20,8 @@ class Item < ApplicationRecord
   belongs_to :category
   has_many :images, dependent: :destroy
 
+  has_many :favorites, dependent: :destroy
+  has_many :favorites, through: :favorites, source: :user
+
   accepts_nested_attributes_for :images, allow_destroy: true
 end
