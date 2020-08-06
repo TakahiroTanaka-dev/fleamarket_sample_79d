@@ -1,0 +1,5 @@
+- if comment.item.seller == current_user    # 出品者とログインユーザーが等しい場合
+  .comment-restore{data:{index: comment.id}} 
+    = link_to "復元する",restore_comment_path(comment.id)
+  .comment-delete.complete-delete{data:{index: comment.id}}     
+    = link_to '完全に削除する', comment_path(comment.id) ,method: :delete
