@@ -21,6 +21,7 @@
                   .js-file_group{"data-index" => "#{i}"}
                     = image_tag image.image.url, data: {index: i}, width: "100", height: "100", alt: "preview"
                     .js-remove
+                    - if i != 0
                       削除
                     %span.js-edit
                       編集
