@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   # after
   root 'items#index'
 
-  resources :items, only: [:index, :show, :new, :create, :destroy] do
+  resources :items do
     collection do
       get 'get_category_children', defaults: { format: 'json' }
       get 'get_category_grandchildren', defaults: { format: 'json' }

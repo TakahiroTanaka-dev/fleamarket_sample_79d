@@ -35,8 +35,8 @@
               -#   = @item.category.parent.parent.name
               -# %br
               -# = link_to '#', class: 'dataLink' do
-              -#   = @item.category.parent.name
-              -# %br
+              -#   = @category.name
+              %br
               = link_to '#', class: 'dataLink' do
                 = @item.category.name
           %tr
@@ -67,7 +67,7 @@
       - if user_signed_in? && @item.seller.id == current_user.id
         %ul.item__edit-btns
           %li.edit-btn
-            = link_to '#', class: "edit-btn-a" do
+            = link_to edit_item_path(@item.id), class: "edit-btn-a" do
               編集
           %li.delete-btn
             = link_to item_path(@item.id), class: "delete-btn-a", method: :delete do
