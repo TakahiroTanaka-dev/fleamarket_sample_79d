@@ -43,4 +43,10 @@ Rails.application.routes.draw do
   resources  :products do
     resources :favorites , only: [:index, :create, :destroy]
   end
+  resources :comments, only:[:create, :update, :destroy] do
+    member do
+      get 'restore'
+    end
+  end
+  
 end

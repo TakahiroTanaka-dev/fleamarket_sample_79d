@@ -19,6 +19,7 @@ class Item < ApplicationRecord
 
   belongs_to :category
   has_many :images, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   has_many :favorites, dependent: :destroy
   has_many :favorites, through: :favorites, source: :user
