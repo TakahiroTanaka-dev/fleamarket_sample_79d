@@ -68,7 +68,6 @@ $(function(){
     $(`#item_images_attributes_${editIndex}_image`).off('click')
     $(`#item_images_attributes_${editIndex}_item`).click()
     $(`#item_images_attributes_${editIndex}_item`).off('click')
-    console.log($(`#item_images_attributes_${editIndex}_image`))
   })
 })
 
