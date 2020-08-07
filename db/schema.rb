@@ -16,6 +16,8 @@ ActiveRecord::Schema.define(version: 2020_08_05_234934) do
     t.bigint "user_id", null: false
     t.string "family_name", null: false
     t.string "first_name", null: false
+    t.string "family_name_kana", null: false
+    t.string "first_name_kana", null: false
     t.string "postal_code", null: false
     t.integer "prefecture_id", null: false
     t.string "city", null: false
@@ -76,11 +78,11 @@ ActiveRecord::Schema.define(version: 2020_08_05_234934) do
     t.string "name", null: false
     t.text "description", null: false
     t.integer "condition", default: 0, null: false
-    t.string "price", null: false
+    t.integer "price", null: false
     t.integer "shipping_cost", null: false
     t.integer "prefecture_id", null: false
     t.integer "shipping_day", null: false
-    t.bigint "seller_id", null: false
+    t.bigint "seller_id"
     t.bigint "buyer_id"
     t.integer "size"
     t.datetime "created_at", precision: 6, null: false
