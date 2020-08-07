@@ -23,7 +23,7 @@ class FavoritesController < ApplicationController
 
   private
   def set_item
-    @product = Item.find(params[:item_id])
+    @item = Item.find(params[:item_id])
   end
 end
 

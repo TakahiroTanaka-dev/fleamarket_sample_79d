@@ -10,14 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_04_053918) do
+ActiveRecord::Schema.define(version: 2020_08_05_234934) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.string "family_name", null: false
     t.string "first_name", null: false
-    t.string "family_name_kana", null: false
-    t.string "first_name_kana", null: false
     t.string "postal_code", null: false
     t.integer "prefecture_id", null: false
     t.string "city", null: false
@@ -57,6 +55,15 @@ ActiveRecord::Schema.define(version: 2020_08_04_053918) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
+  create_table "favorites", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "item_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["item_id"], name: "index_favorites_on_item_id"
+    t.index ["user_id"], name: "index_favorites_on_user_id"
+  end
+
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "image", null: false
     t.bigint "item_id", null: false
@@ -69,11 +76,11 @@ ActiveRecord::Schema.define(version: 2020_08_04_053918) do
     t.string "name", null: false
     t.text "description", null: false
     t.integer "condition", default: 0, null: false
-    t.integer "price", null: false
+    t.string "price", null: false
     t.integer "shipping_cost", null: false
     t.integer "prefecture_id", null: false
     t.integer "shipping_day", null: false
-    t.bigint "seller_id"
+    t.bigint "seller_id", null: false
     t.bigint "buyer_id"
     t.integer "size"
     t.datetime "created_at", precision: 6, null: false
@@ -107,6 +114,8 @@ ActiveRecord::Schema.define(version: 2020_08_04_053918) do
   add_foreign_key "cards", "users"
   add_foreign_key "comments", "items"
   add_foreign_key "comments", "users"
+  add_foreign_key "favorites", "items"
+  add_foreign_key "favorites", "users"
   add_foreign_key "images", "items"
   add_foreign_key "items", "categories"
   add_foreign_key "items", "users", column: "buyer_id"

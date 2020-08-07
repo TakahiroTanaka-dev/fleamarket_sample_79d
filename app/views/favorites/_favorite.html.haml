@@ -1,0 +1,26 @@
+- if Favorite.find_by(user_id: current_user.id, item_id: item.id)
+  = link_to(product_favorite_path(@item, item.id), method: :delete, remote: true) do
+    %li.optionalBtn.already
+      = icon('fa', 'star')
+      お気に入り済み！
+-else 
+  = link_to(product_favorites_path(@item), method: :post, remote: true) do
+    %li.optionalBtn.none
+      = icon('fa', 'star')
+      お気に入りへ！ 
+
+  - if @favorites.present?
+        %ul
+          - @favorites.each do |favorite|
+            %li
+              = link_to product_path(favorite.item.id) do
+                .item-image
+                  = image_tag (favorite.item.images[0].src.url)
+                .item-body
+                  .item-name
+                    = favorite.item.item_name
+                  .item-price
+                    = "￥#{favorite.item.price}"
+    - else 
+        %h1
+          お気に入りに追加した商品はありません
