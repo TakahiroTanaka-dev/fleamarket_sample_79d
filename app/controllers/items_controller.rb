@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
-  before_action :move_to_root_path, except:[:index, :show], unless: :user_signed_in?
+  before_action :move_to_root_path, except:[:index, :show, :edit], unless: :user_signed_in?
   before_action :authenticate_user, only: :destroy
-  before_action :set_item, only: [:show, :destroy]
+  before_action :set_item, only: [:show, :destroy, :edit]
 
   def index
     @categoryitems = Item.all.order("RAND()")
@@ -29,18 +29,18 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @category = Category.find(params[:id])
   end
 
   def edit
-
+    @item.images.new
+    @category_parent_array=Category.where(ancestry: nil)
   end
 
   def update
-    if @item.update(update_params)
-      redirect_to item_path
-    else
-      render edit_item_path
-    end
+    @item=Item.find(params[:id])
+    @item.update(item_params)
+    redirect_to item_path
   end
 
 
@@ -76,10 +76,6 @@ class ItemsController < ApplicationController
   private
   def item_params
     params.require(:item).permit(:name, :description, :condition, :category_id, :shipping_cost, :condition, :price, :shipping_id, :prefecture_id, :shipping_day, images_attributes:[:image, :id, :_destroy]).merge(seller_id: current_user.id)
-  end
-
-  def update_params
-    params.require(:item).permit(:name, :description, :condition, :category_id, :shipping_cost, :condition, :price, :shipping_id, :prefecture_id, :shipping_day, images_attributes:[:image, :id, :_destroy])
   end
 
   def move_to_root_path
