@@ -38,9 +38,16 @@ class ItemsController < ApplicationController
   end
 
   def update
-    @item=Item.find(params[:id])
-    @item.update(item_params)
-    redirect_to item_path
+    begin
+      @item=Item.find(params[:id])
+      if @item.update(item_params)
+          redirect_to item_path, notice: "編集が完了しました"
+      else
+        redirect_to edit_item_path(@item), alert: "必須項目を入力して下さい"
+      end
+    rescue
+      redirect_to edit_item_path(@item), alert: "必須項目を入力して下さい"
+    end
   end
 
 
