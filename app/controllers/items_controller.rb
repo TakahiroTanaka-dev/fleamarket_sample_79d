@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
-  before_action :move_to_root_path, except:[:index, :show, :edit], unless: :user_signed_in?
-  before_action :authenticate_user, only: :destroy
+  before_action :move_to_root_path, except:[:index, :show], unless: :user_signed_in?
+  before_action :authenticate_user, only: [:edit, :update, :destroy]
   before_action :set_item, only: [:show, :destroy, :edit]
 
   def index

@@ -37,9 +37,6 @@ class TransactsController < ApplicationController
 
   def set_item
     @item = Item.find(params[:item_id])
-    unless @item.buyer_id.nil?
-      redirect_to root_path
-    end
   end
 
   def authenticate_buyer
