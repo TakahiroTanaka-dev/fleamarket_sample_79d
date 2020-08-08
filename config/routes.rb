@@ -26,6 +26,7 @@ Rails.application.routes.draw do
     member do
       get 'log_out'
       get 'bought_item', to: 'users#bought_item'
+      get 'sold_item', to: 'users#sold_item'
     end
   end
 

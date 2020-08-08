@@ -30,8 +30,9 @@
       width: 560px;
       margin: 0 30px;
       .show__image__main {
-        object-fit: cover;
+        object-fit: contain;
         height: 350px;
+        width: 560px;
       }
       ul {
         display: flex;
@@ -42,7 +43,7 @@
           margin-top: 5px;
           margin-left:20px;
           .show__image__sub {
-            object-fit: cover;
+            object-fit: contain;
             height: 90px;
             width: 130px;
           }
