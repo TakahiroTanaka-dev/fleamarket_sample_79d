@@ -6,13 +6,10 @@ Rails.application.routes.draw do
     get 'addresses', to: 'users/registrations#new_address'
     post 'addresses', to: 'users/registrations#create_address'
   end
-  # before
 
-  get 'items/index'
-  # after
   root 'items#index'
 
-  resources :items, only: [:index, :show, :new, :create, :destroy] do
+  resources :items do
     collection do
       get 'search'
       get 'get_category_children', defaults: { format: 'json' }
@@ -30,6 +27,7 @@ Rails.application.routes.draw do
     member do
       get 'log_out'
       get 'bought_item', to: 'users#bought_item'
+      get 'sold_item', to: 'users#sold_item'
     end
   end
 
@@ -39,5 +37,12 @@ Rails.application.routes.draw do
     end
   end
 
-    # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.htm 
+
+  resources :comments, only:[:create, :update, :destroy] do
+    member do
+      get 'restore'
+    end
+  end
+  
+
 end

@@ -1,6 +1,6 @@
 class TransactsController < ApplicationController
 
-  before_action :set_card, :set_item, only: [:index, :pay]
+  before_action :set_card, :set_item, :authenticate_buyer
 
   def index  
     if @card.blank?
@@ -24,8 +24,12 @@ class TransactsController < ApplicationController
   end
 
   def done
-    @item = Item.find(params[:item_id])
+    Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_PRIVATE_KEY]
+    customer = Payjp::Customer.retrieve(@card.customer_id)
+    @default_card_information = customer.cards.retrieve(@card.card_id)
   end
+
+  private
 
   def set_card
     @card = Card.find_by(user_id: current_user.id)
@@ -33,8 +37,11 @@ class TransactsController < ApplicationController
 
   def set_item
     @item = Item.find(params[:item_id])
-    unless @item.buyer_id.nil?
-      redirect_to root_path
+  end
+
+  def authenticate_buyer
+    if @item.seller_id == current_user.id
+      redirect_to root_path, alert: '出品者は購入できません'
     end
   end
 

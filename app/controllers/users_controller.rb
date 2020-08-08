@@ -7,6 +7,10 @@ class UsersController < ApplicationController
     @item = Item.where(buyer_id: current_user.id)
   end
 
+  def sold_item
+    @item = Item.where(seller_id: current_user.id)
+  end
+
   private
 
   def authenticate_user

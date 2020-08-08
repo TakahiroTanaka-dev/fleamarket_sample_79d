@@ -11,8 +11,9 @@ $(document).on('turbolinks:load', ()=> {
   const buildImg = (index, url)=> {
     const html = `
     <div class="js-file_group" data-index="${index}">
-      <img src="${url}" width="100px" height="100px" class="js-file">
+      <img src="${url}" data-index="${index}" width="100px" height="100px" class="js-file">
     <div class="js-remove">削除</div>
+    <span class="js-edit">編集</span>
     </div>`;
     return html;
   }
@@ -22,8 +23,6 @@ $(document).on('turbolinks:load', ()=> {
   // 既に使われているindexを除外
   lastIndex = $('.js-file_group:last').data('index');
   fileIndex.splice(0, lastIndex);
-  
-  $('.hidden-destroy').hide();
   
   // input:last.trigger("click")
   $('#image-box').on('click', function(){
@@ -55,12 +54,26 @@ $(document).on('turbolinks:load', ()=> {
     if (hiddenCheck) hiddenCheck.prop('checked', true);
     $(this).parent().remove();
     $(`img[data-index="${targetIndex}"]`).remove();
+    $(`#item_images_attributes_${targetIndex}_image`).remove()
   })
+  
 });
+
+// edit側の処理を分離させました。
+$(function(){
+  $(document).on('click', '.js-edit' ,function(){
+    const editIndex = $(this).parent().data('index')
+    $(`#item_images_attributes_${editIndex}_image`).click()
+    $(`#item_images_attributes_${editIndex}_image`).off('click')
+    $(`#item_images_attributes_${editIndex}_item`).click()
+    $(`#item_images_attributes_${editIndex}_item`).off('click')
+  })
+})
 
 
 // ここからはカテゴリーの子要素と孫要素を追加するよ！！
-$(function(){
+// 多分ターボリンクにしないとうまくページが読み込めないっぽい
+$(document).on('turbolinks:load', ()=> {
 
   function appendOption(category) {
     const html = `<option value="${category.name}" data-category="${category.id}">${category.name}</option>`;
@@ -151,4 +164,3 @@ $(function(){
     }
   });
 });
-

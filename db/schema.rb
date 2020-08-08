@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_28_022606) do
+ActiveRecord::Schema.define(version: 2020_08_04_053918) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -46,6 +46,17 @@ ActiveRecord::Schema.define(version: 2020_07_28_022606) do
     t.index ["ancestry"], name: "index_categories_on_ancestry"
   end
 
+  create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "item_id", null: false
+    t.bigint "user_id", null: false
+    t.integer "delete_check", default: 0
+    t.string "comment"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["item_id"], name: "index_comments_on_item_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "image", null: false
     t.bigint "item_id", null: false
@@ -58,11 +69,11 @@ ActiveRecord::Schema.define(version: 2020_07_28_022606) do
     t.string "name", null: false
     t.text "description", null: false
     t.integer "condition", default: 0, null: false
-    t.string "price", null: false
+    t.integer "price", null: false
     t.integer "shipping_cost", null: false
     t.integer "prefecture_id", null: false
     t.integer "shipping_day", null: false
-    t.bigint "seller_id", null: false
+    t.bigint "seller_id"
     t.bigint "buyer_id"
     t.integer "size"
     t.datetime "created_at", precision: 6, null: false
@@ -94,6 +105,8 @@ ActiveRecord::Schema.define(version: 2020_07_28_022606) do
 
   add_foreign_key "addresses", "users"
   add_foreign_key "cards", "users"
+  add_foreign_key "comments", "items"
+  add_foreign_key "comments", "users"
   add_foreign_key "images", "items"
   add_foreign_key "items", "categories"
   add_foreign_key "items", "users", column: "buyer_id"
