@@ -17,7 +17,6 @@
           #previews
             .js-box
             #image-box
-              %i.fa.fa-camera
               %p クリックしてファイルをアップロード
             = f.fields_for :images do |image|
               .js-file_group{"data-index" => "#{image.index}"}
