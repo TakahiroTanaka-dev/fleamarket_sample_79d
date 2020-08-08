@@ -6,10 +6,7 @@ Rails.application.routes.draw do
     get 'addresses', to: 'users/registrations#new_address'
     post 'addresses', to: 'users/registrations#create_address'
   end
-  # before
 
-  get 'items/index'
-  # after
   root 'items#index'
 
   resources :items do
@@ -17,7 +14,7 @@ Rails.application.routes.draw do
       get 'get_category_children', defaults: { format: 'json' }
       get 'get_category_grandchildren', defaults: { format: 'json' }
     end
-    resources :transacts, only: [:index, :set_item] do
+    resources :transacts, only: [:index] do
       collection do
         get 'done', to: 'transacts#done'
         post 'pay', to: 'transacts#pay'
@@ -32,8 +29,6 @@ Rails.application.routes.draw do
     end
   end
 
-    # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  resources :transacts
   resources :cards, only: [:new, :show, :destroy] do
     collection do
       post 'pay', to: 'cards#pay'
