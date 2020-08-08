@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :move_to_root_path, except:[:index, :show], unless: :user_signed_in?
+  before_action :move_to_root_path, except:[:index, :show, :search], unless: :user_signed_in?
   before_action :authenticate_user, only: :destroy
   before_action :set_item, only: [:show, :destroy]
 
@@ -51,7 +51,6 @@ class ItemsController < ApplicationController
     end
   end
 
-
   def destroy
     if @item.destroy
       redirect_to root_path, notice: "削除が完了しました"
@@ -60,6 +59,9 @@ class ItemsController < ApplicationController
     end
   end
 
+  def search
+    @items = Item.search(params[:keyword])
+  end
 
   private
   def item_params

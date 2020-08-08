@@ -1,0 +1,15 @@
+= render "layouts/header"
+
+.main
+  .pickupcategory
+    %h2.pick-head
+      "
+      = params[:keyword]
+      "
+      の検索結果
+    .pick-box
+      .pbox-lists
+        = render "items/categoryitem", items: @items
+
+= render "layouts/appbanner"
+= render "layouts/footer"

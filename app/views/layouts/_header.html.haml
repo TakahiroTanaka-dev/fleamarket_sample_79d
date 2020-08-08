@@ -5,11 +5,12 @@
         = link_to root_path, class: "top-logo" do
           = image_tag 'logo.png', class: "logoimage"
       .search-form
-        %form.search-box
-          %input.search-box__text{type: 'text', placeholder: "キーワードから探す"}
-          %button.search-box__btn{type: 'submit'}
-            .search-box__btn__icon
-              = image_tag 'icon-search 1.png', class: "searchicon"
+        = form_with url: search_items_path, local: true, method: :get, class: "search-box" do |f|
+          = f.text_field :keyword, placeholder: "キーワードから探す", class: "search-box__text"
+          = f.label class: "search-box__submit" do
+            = f.submit "", class: "search-box__btn" 
+            = image_tag 'icon-search 1.png', class: "searchicon"
+           
     .info
       %ul.info__left
         %li.info__left__category

@@ -4,7 +4,7 @@ class TransactsController < ApplicationController
 
   def index  
     if @card.blank?
-      redirect_to new_card_path 
+      redirect_to new_card_path
     else
       Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_PRIVATE_KEY]
       customer = Payjp::Customer.retrieve(@card.customer_id)
