@@ -12,5 +12,11 @@ describe Item do
       item.valid?
       expect(item.errors[:description]).to include("を入力してください")
     end
+
+    it "is invalid without a condition" do
+      item = Item.new(name: "a", description: "a", condition: "", price: 123, category_id: 1, shipping_cost: 1, prefecture_id: 3, shipping_day: 1, seller_id: 1 )
+      item.valid?
+      expect(item.errors[:condition]).to include("を入力してください")
+    end
   end
 end
