@@ -37,6 +37,11 @@ describe Item do
       expect(item.errors[:shipping_cost]).to include("を入力してください")
     end
 
+    it "is invalid without a prefecture_id" do
+      item = Item.new(name: "a", description: "a", condition: 1, price: 123, category_id: 1, shipping_cost: 1, prefecture_id: "", shipping_day: 1, seller_id: 1 )
+      item.valid?
+      expect(item.errors[:prefecture_id]).to include("を入力してください")
+    end
     
   end
 end
