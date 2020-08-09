@@ -24,5 +24,11 @@ describe Item do
       item.valid?
       expect(item.errors[:price]).to include("を入力してください")
     end
+
+    it "is invalid without a category_id" do
+      item = Item.new(name: "a", description: "a", condition: 1, price: 123, category_id: "", shipping_cost: 1, prefecture_id: 3, shipping_day: 1, seller_id: 1 )
+      item.valid?
+      expect(item.errors[:category_id]).to include("を入力してください")
+    end
   end
 end
