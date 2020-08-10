@@ -3,6 +3,14 @@ class UsersController < ApplicationController
   def show
   end
 
+  def bought_item
+    @item = Item.where(buyer_id: current_user.id)
+  end
+
+  def sold_item
+    @item = Item.where(seller_id: current_user.id)
+  end
+
   private
 
   def authenticate_user

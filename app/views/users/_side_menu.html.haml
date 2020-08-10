@@ -1,18 +1,18 @@
 .side_menu
   %ul.side_menu__top
     = link_to user_path do
-      %li.selected
+      %li
         %p マイページ
         %span ＞
-    = link_to '#' do
+    = link_to new_item_path do
       %li
         %p 出品する
         %span ＞
-    = link_to '#' do
+    = link_to sold_item_user_path do
       %li
         %p 出品した商品 
         %span ＞
-    = link_to '#' do
+    = link_to bought_item_user_path do
       %li
         %p 購入した商品
         %span ＞
