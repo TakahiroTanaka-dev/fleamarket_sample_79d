@@ -85,3 +85,5 @@ gem 'mini_magick'
 # S3
 gem 'fog-aws'
 
+# パンくず
+gem "gretel"
