@@ -1,14 +1,15 @@
 class ItemsController < ApplicationController
-  before_action :move_to_root_path, except:[:index, :show], unless: :user_signed_in?
+
+  before_action :move_to_root_path, except:[:index, :show, :search], unless: :user_signed_in?
   before_action :authenticate_user, only: [:edit, :update, :destroy]
   before_action :set_item, only: [:show, :destroy, :edit]
+
 
   def index
     @categoryitems = Item.all.order("id DESC")
   end
   
   def new
-    # ブランドテーブルとのアソシエーションいるなこれ
     if user_signed_in?
       @item=Item.new
       @item.images.new
@@ -17,17 +18,17 @@ class ItemsController < ApplicationController
       redirect_to new_user_session_path
     end
   end
-
+    
   def create
     begin
       @item=Item.create(item_params)
       if @item.save
         redirect_to root_path, notice: "出品が完了しました"
       else
-        redirect_to new_item_path, alert: "必須項目を入力して下さい"
+        redirect_to new_item_path, alert: "記入内容に誤りがあります"
       end
     rescue 
-      redirect_to new_item_path, alert: "必須項目を入力して下さい"
+      redirect_to new_item_path, alert: "記入内容に誤りがあります"
     end
   end
 
@@ -75,7 +76,6 @@ class ItemsController < ApplicationController
     end
   end
 
-
   def destroy
     if @item.destroy
       redirect_to root_path, notice: "削除が完了しました"
@@ -84,6 +84,9 @@ class ItemsController < ApplicationController
     end
   end
 
+  def search
+    @items = Item.search(params[:keyword])
+  end
 
   private
   def item_params

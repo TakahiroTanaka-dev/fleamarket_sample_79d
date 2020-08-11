@@ -11,10 +11,11 @@ Rails.application.routes.draw do
 
   resources :items do
     collection do
+      get 'search'
       get 'get_category_children', defaults: { format: 'json' }
       get 'get_category_grandchildren', defaults: { format: 'json' }
     end
-    resources :transacts, only: [:index] do
+    resources :transacts do 
       collection do
         get 'done', to: 'transacts#done'
         post 'pay', to: 'transacts#pay'
@@ -42,4 +43,5 @@ Rails.application.routes.draw do
     end
   end
   
+
 end
