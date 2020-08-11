@@ -4,8 +4,7 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :destroy, :edit]
 
   def index
-    @categoryitems = Item.all.order("RAND()")
-    @branditems = Item.all.order("id DESC")
+    @categoryitems = Item.all.order("id DESC")
   end
   
   def new

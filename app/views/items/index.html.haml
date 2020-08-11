@@ -6,25 +6,26 @@
 
   .pickupcategory
     %h2.pick-head
-      ピックアップカテゴリー
+      新規投稿商品
     .pick-box
       .pbox-top
         = link_to '#', class: "pbox-top-title" do
           %h2.pbox-title
-            新規投稿商品
+            新着順
       .pbox-lists
         = render "items/categoryitem", items: @categoryitems
 
-  .pickupcategory
-    %h2.pick-head
-      ピックアップブランド
-    .pick-box
-      .pbox-top
-        = link_to '#', class: "pbox-top-title" do
-          %h2.pbox-top
-            アーカイバ
-      .pbox-lists
-        = render "items/branditem", items: @branditems
+  -# ブランド
+  -# .pickupcategory
+  -#   %h2.pick-head
+  -#     ピックアップブランド
+  -#   .pick-box
+  -#     .pbox-top
+  -#       = link_to '#', class: "pbox-top-title" do
+  -#         %h2.pbox-top
+  -#           アーカイバ
+  -#     .pbox-lists
+  -#       = render "items/branditem", items: @branditems
 
 
 =render "layouts/appbanner"
