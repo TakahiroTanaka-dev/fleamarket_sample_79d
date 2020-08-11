@@ -119,7 +119,6 @@ $(document).on('turbolinks:load', ()=> {
       })
 
       .done(function(children){
-        console.log(parentValue)
         $('#child_form').remove();
         $('#grandchild_form').remove();
         let insertHTML = '';
@@ -152,7 +151,7 @@ $(document).on('turbolinks:load', ()=> {
       })
 
       .done(function(grandchildren) {
-        console.log(grandchildren)
+        $('#grandchild_form').remove();
         let insertHTML = '';
         grandchildren.forEach(function(grandchild){
           insertHTML += appendOption(grandchild);
@@ -163,6 +162,7 @@ $(document).on('turbolinks:load', ()=> {
         alert('カテゴリーを入力して下さい');
       })
     } else {
+      $('#child_form').remove();
       $('#grandchild_form').remove();
     }
   });
