@@ -5,7 +5,6 @@ class ItemsController < ApplicationController
 
   def index
     @categoryitems = Item.all.order("id DESC")
-    @branditems = Item.all.order("RAND()")
   end
   
   def new
