@@ -60,7 +60,9 @@
             %span.caution
               必須
           .product-main__contents__detailsection__select
-            = f.collection_select :category_id, @category_parent_array, :id , :name, {prompt: '選択してください'}, id: "parent-form"
+            = f.select :parent_id, @category_parent_array, {selected:@item.category.parent.parent.id}, id: 'parent-form'
+            = f.select :child_id, options_for_select(@category_children_array.map{|b| [b.name, b.id, {data:{category: b.id}}]}, {prompt: "指定なし", selected: @item.category.parent.id}),{}, {class: 'category-wrapper__category form-control', id: 'child_form', style: "margin-top : 10px"}
+            = f.select :category_id, options_for_select(@category_grandchildren_array.map{|b| [b.name, b.id, {data:{category: b.id}}]}, {prompt: "指定なし", selected: @item.category.id}),{}, {class: 'category-wrapper__category form-control', id: 'grandchild_form', style: "margin-top : 10px"}
           .product-main__contents__detailsection__items
             %p.description
               ブランド

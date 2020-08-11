@@ -33,14 +33,35 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @category = Category.find(params[:id])
+    @item = Item.find(params[:id])
+    @parents = Category.where(ancestry: nil)
+    @category_id = @item.category_id
+    @child = Category.find(@category_id).parent
     @comment = Comment.new
     @commentALL = @item.comments
   end
 
   def edit
     @item.images.new
-    @category_parent_array=Category.where(ancestry: nil)
+    
+    grandchild_category = @item.category
+    child_category = grandchild_category.parent
+
+
+    @category_parent_array = []
+    Category.where(ancestry: nil).each do |parent|
+      @category_parent_array << [parent.name, parent.id]
+    end
+
+    @category_children_array = []
+    Category.where(ancestry: child_category.ancestry).each do |children|
+      @category_children_array << children
+    end
+
+    @category_grandchildren_array = []
+    Category.where(ancestry: grandchild_category.ancestry).each do |grandchildren|
+      @category_grandchildren_array << grandchildren
+    end
   end
 
   def update
