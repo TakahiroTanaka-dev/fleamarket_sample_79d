@@ -23,7 +23,6 @@ class Item < ApplicationRecord
 
   accepts_nested_attributes_for :images, allow_destroy: true
 
-
   def self.search(search)
     if search
       Item.where('name LIKE(?)', "%#{search}%")
@@ -33,6 +32,6 @@ class Item < ApplicationRecord
   end
   
   validates :name, :description, :condition, :price, :category_id, :shipping_cost, :prefecture_id, :shipping_day, :images, presence: true
-  validates :price, numericality: { only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999 }
-  
+  validates :price, numericality: {greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999}
+
 end
