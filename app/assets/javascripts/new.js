@@ -65,8 +65,10 @@ $(function(){
     const editIndex = $(this).parent().data('index')
     $(`#item_images_attributes_${editIndex}_image`).click()
     $(`#item_images_attributes_${editIndex}_image`).off('click')
+    $(this).parent().remove();
     $(`#item_images_attributes_${editIndex}_item`).click()
     $(`#item_images_attributes_${editIndex}_item`).off('click')
+    $(this).parent().remove();
   })
 })
 
@@ -76,14 +78,14 @@ $(function(){
 $(document).on('turbolinks:load', ()=> {
 
   function appendOption(category) {
-    const html = `<option value="${category.name}" data-category="${category.id}">${category.name}</option>`;
+    const html = `<option value="${category.id}" data-category="${category.id}">${category.name}</option>`;
     return html;
   }
 
   function appendChildrenBox(insertHTML){
     let childSelectHTML = '';
     childSelectHTML = `
-      <select class="select--wrap-cat1__default-category1" id="child_form" name="category_id" style="margin-top: 10px">
+      <select class="select--wrap-cat1__default-category1" id="child_form" style="margin-top: 10px">
         <option value="---" data-category="---">選択してください</option>
         ${insertHTML}
       </select>
@@ -95,7 +97,7 @@ $(document).on('turbolinks:load', ()=> {
   function appendGrandchildrenBox(insertHTML) {
     let grandchildSelectHtml = '';
     grandchildSelectHtml = `
-    <select class="select--wrap-cat1__default-category1" id="grandchild_form" name="category_id" style="margin-top: 10px">
+    <select class="select--wrap-cat1__default-category1" id="grandchild_form" name="item[category_id]" style="margin-top: 10px">
       <option value="---" data-category="---">---</option>
         ${insertHTML}
     </select>`; 
@@ -117,6 +119,7 @@ $(document).on('turbolinks:load', ()=> {
       })
 
       .done(function(children){
+        console.log(parentValue)
         $('#child_form').remove();
         $('#grandchild_form').remove();
         let insertHTML = '';
@@ -139,7 +142,6 @@ $(document).on('turbolinks:load', ()=> {
   $(".product-main__contents__detailsection__select").on("change", "#child_form", function() {
     var childValue = $('#child_form option:selected').data('category');
     if (childValue != "") {
-      $('#grandchild_form').remove();
       $.ajax({
         url     : '/items/get_category_grandchildren',
         type    : 'GET',
@@ -150,6 +152,7 @@ $(document).on('turbolinks:load', ()=> {
       })
 
       .done(function(grandchildren) {
+        console.log(grandchildren)
         let insertHTML = '';
         grandchildren.forEach(function(grandchild){
           insertHTML += appendOption(grandchild);

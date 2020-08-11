@@ -33,7 +33,10 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @category = Category.find(params[:id])
+    @item = Item.find(params[:id])
+    @parents = Category.where(ancestry: nil)
+    @category_id = @item.category_id
+    @child = Category.find(@category_id).parent
     @comment = Comment.new
     @commentALL = @item.comments
   end
