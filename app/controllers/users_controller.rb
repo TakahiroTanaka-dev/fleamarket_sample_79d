@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :authenticate_user, only: :show
   def show
+    session[:item_id] = nil
   end
 
   def bought_item

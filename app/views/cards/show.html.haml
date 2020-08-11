@@ -19,8 +19,12 @@
           = form_tag(card_path(current_user.id), method: :delete, id: 'charge-form',  name: "inputForm") do
             %input{ type: "hidden", name: "card_id", value: "" }
             %button.CardSubmit__button 削除する
-        .CardSubmit__button
-          = link_to "戻る", :back, class: "CardSubmit__button"  
+        - if session[:item_id]
+          .CardSubmit__button
+            = link_to "戻る", item_transacts_path(session[:item_id]), class: "CardSubmit__button" 
+        - else 
+          .CardSubmit__button
+            = link_to "戻る", user_path(current_user.id), class: "CardSubmit__button" 
   .TsurutaTerms
     = link_to "#", class: "TsurutaTerm" do
       プライバシーポリシー
