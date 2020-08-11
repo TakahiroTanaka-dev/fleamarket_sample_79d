@@ -11,29 +11,26 @@ class ItemsController < ApplicationController
   end
   
   def new
+    if user_signed_in?
+      @item=Item.new
+      @item.images.new
+      @category_parent_array=Category.where(ancestry: nil)
+    else
+      redirect_to new_user_session_path
+    end
+  end
+    
+  def create
     begin
-    # ブランドテーブルとのアソシエーションいるなこれ
-      if user_signed_in?
-        @item=Item.new
-        @item.images.new
-        @category_parent_array=Category.where(ancestry: nil)
+      @item=Item.create(item_params)
+      if @item.save
+        redirect_to root_path, notice: "出品が完了しました"
       else
-        redirect_to new_user_session_path
+        redirect_to new_item_path, alert: "記入内容に誤りがあります"
       end
     rescue 
       redirect_to new_item_path, alert: "記入内容に誤りがあります"
     end
-  end
-
-  def create
-    
-    @item=Item.create(item_params)
-    if @item.save
-      redirect_to root_path, notice: "出品が完了しました"
-    else
-      redirect_to new_item_path, alert: "記入内容に誤りがあります"
-    end
-  
   end
 
   def show
