@@ -153,6 +153,7 @@ GEM
       haml (>= 4.0.6, < 6.0)
       html2haml (>= 1.0.1)
       railties (>= 5.1)
+    hashie (4.1.0)
     html2haml (2.2.0)
       erubis (~> 2.7.0)
       haml (>= 4.0, < 6)
@@ -203,6 +204,12 @@ GEM
     nio4r (2.5.2)
     nokogiri (1.10.10)
       mini_portile2 (~> 2.4.0)
+    omniauth (1.9.1)
+      hashie (>= 3.4.6)
+      rack (>= 1.6.2, < 3)
+    omniauth-rails_csrf_protection (0.1.2)
+      actionpack (>= 4.2)
+      omniauth (>= 1.3.1)
     orm_adapter (0.5.0)
     payjp (0.0.7)
       rest-client (~> 2.0)
@@ -373,6 +380,7 @@ DEPENDENCIES
   listen (~> 3.2)
   mini_magick
   mysql2 (>= 0.4.4)
+  omniauth-rails_csrf_protection
   payjp
   pry-rails
   puma (~> 4.1)

@@ -84,3 +84,6 @@ gem 'carrierwave'
 gem 'mini_magick'
 # S3
 gem 'fog-aws'
+
+# SNSのAPI連携
+gem "omniauth-rails_csrf_protection"
